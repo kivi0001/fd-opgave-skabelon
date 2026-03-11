@@ -1,0 +1,27 @@
+---
+// src/components/CoreValues.astro
+import coreValues from "@data/coreValues.json";
+import DynamicIcon from "@helpers/DynamicIcon.astro";
+---
+
+<section class="value-container">
+  <div class="value-header">
+    <h2>{coreValues.eyebrow}</h2>
+    <h1>{coreValues.title}</h1>
+    <p>{coreValues.subtitle}</p>
+    <a href={coreValues.button.link} class="button">{coreValues.button.text}</a>
+  </div>
+
+  <div class="value-cards">
+    {
+      coreValues.values.map((value) => (
+        <div class="value-card">
+          <DynamicIcon name={value.icon} class="value-icon" />
+          <h3>{value.title}</h3>
+          <p>{value.description}</p>
+          <a href={value.link.url}>{value.link.text}</a>
+        </div>
+      ))
+    }
+  </div>
+</section>
