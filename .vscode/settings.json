@@ -1,6 +1,10 @@
 {
   "github.copilot.enable": {
-    "*": false
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "astro": true
   },
   "git.branchProtection": ["main", "master"],
   "[astro]": {
