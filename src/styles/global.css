@@ -1,1 +1,20 @@
 /* Globale styles her */
+
+:root{
+    --content-width: 1200px;
+}
+
+body{
+    margin-inline: auto;
+}
+
+main{
+    display: grid;
+    grid-template-columns:
+      [full-start] 1fr [content-start] minmax(0, var(--content-width))
+      [content-end]
+      1fr [full-end];
+    > * {
+      grid-column: content-start / content-end;
+    }
+}
