@@ -14,7 +14,13 @@ main{
       [full-start] 1fr [content-start] minmax(0, var(--content-width))
       [content-end]
       1fr [full-end];
-    > * {
-      grid-column: content-start / content-end;
-    }
+}
+
+section{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full-start / -1;
+  > :not(&) {
+    grid-column: content;
+  }
 }
