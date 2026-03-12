@@ -2,6 +2,7 @@
 // src/components/CoreValues.astro
 import coreValues from "@data/coreValues.json";
 import DynamicIcon from "@helpers/DynamicIcon.astro";
+import ArrowRight from "@icons/arrow--right.svg";
 ---
 
 <section class="value-container">
@@ -20,6 +21,7 @@ import DynamicIcon from "@helpers/DynamicIcon.astro";
           <h3>{value.title}</h3>
           <p>{value.description}</p>
           <a href={value.link.url}>{value.link.text}</a>
+          <ArrowRight width={22} height={22} class="arrowright-icon" />
         </div>
       ))
     }
@@ -30,10 +32,28 @@ import DynamicIcon from "@helpers/DynamicIcon.astro";
   section {
     background-color: var(--color-ui-primary);
     color: var(--color-on-ui-primary);
+    display: grid;
+    width: full-start full-end;
 
     .value-cards {
       display: grid;
-      grid-template-columns:;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      /* grid-template-columns: repeat(4, 1fr); */
+      gap: 10px;
+
+      > * {
+        background-color: var(--color-surface-secondary);
+        color: var(--color-text);
+      }
+
+      .value-icon {
+        color: #f5f5f5;
+        background-color: var(--color-ui-primary);
+        padding: 10px;
+        border-radius: 99px;
+        box-sizing: content-box;
+      }
     }
   }
 </style>
