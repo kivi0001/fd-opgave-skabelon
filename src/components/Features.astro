@@ -6,61 +6,84 @@ import ArrowRight from "@icons/arrow--right.svg";
 ---
 
 <section class="value-container">
-  <div class="value-header">
-    <h2>{coreValues.eyebrow}</h2>
-    <h1>{coreValues.title}</h1>
-    <p>{coreValues.subtitle}</p>
-    <a href={coreValues.button.link} class="button">{coreValues.button.text}</a>
-  </div>
-
-  <div class="value-cards">
-    {
-      coreValues.values.map((value) => (
-        <div class="value-card">
-          <DynamicIcon name={value.icon} class="value-icon" />
-          <h3>{value.title}</h3>
-          <p>{value.description}</p>
-          <a href={value.link.url}>{value.link.text}</a>
-          <ArrowRight width={22} height={22} class="arrowright-icon" />
-        </div>
-      ))
-    }
+  <!-- Indre container, der ikke fylder hele viewporten -->
+  <div class="inner-container">
+    <div class="value-info">
+      <h3>{coreValues.eyebrow}</h3>
+      <h2>{coreValues.title}</h2>
+      <p>{coreValues.subtitle}</p>
+      <a href={coreValues.button.link} class="button"
+        >{coreValues.button.text}</a
+      >
+    </div>
+    <div class="value-cards">
+      {
+        coreValues.values.map((value) => (
+          <div class="value-card">
+            <DynamicIcon name={value.icon} class="value-icon" />
+            <h3>{value.title}</h3>
+            <p>{value.description}</p>
+            <a href={value.link.url}>{value.link.text}</a>
+            <ArrowRight width={22} height={22} class="arrowright-icon" />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
-  section {
-    background-color: var(--color-ui-primary);
-    color: var(--color-on-ui-primary);
-    container-type: inline-size;
+  @layer components {
+    .value-container {
+      background-color: var(--color-ui-primary);
+      color: var(--color-on-ui-primary);
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full / -1;
+
+      h2 {
+        color: var(--color-on-ui-primary);
+      }
+    }
+
+    .inner-container {
+      container-type: inline-size;
+      container-name: cards;
+      grid-column: content;
+      margin: var(--space-s) 0;
+    }
 
     .value-cards {
       display: grid;
-      /* grid-auto-flow: column;
-      grid-auto-columns: minmax(auto, 1fr); */
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: var(--space-s);
+    }
 
-      > * {
-        background-color: var(--color-surface-secondary);
-        color: var(--color-text);
-      }
+    .value-card {
+      background-color: var(--color-surface-secondary);
+      color: var(--color-text);
+      padding: 1rem;
+    }
 
-      .value-icon {
-        color: #f5f5f5;
-        background-color: var(--color-ui-primary);
-        padding: 10px;
-        border-radius: 99px;
-        box-sizing: content-box;
-      }
+    .value-icon {
+      color: #f5f5f5;
+      background-color: var(--color-ui-primary);
+      padding: 10px;
+      border-radius: 99px;
+      box-sizing: content-box;
+    }
+  }
 
-      @container (width < 600px) {
-        grid-template-columns: 1fr 1fr;
-      }
+  /* Container querien Reagerer på .inner-container's størrelse */
+  @container cards (width < 900px) {
+    .value-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
-      @container (width < 400) {
-        grid-template-columns 1fr;
-      }
+  @container cards (width < 450px) {
+    .value-cards {
+      grid-template-columns: 1fr;
     }
   }
 </style>
