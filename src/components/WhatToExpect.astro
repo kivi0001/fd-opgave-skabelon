@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+
+import empoyeesImg from "@assets/images/img/empoyeesimg.png";
+import Checkmark from "@icons/checkmark.svg";
+---
+
+<section class="imgages">
+  <div class="empoyeesImg">
+    <Image src={empoyeesImg} alt="CEO" />
+  </div>
+
+  <div class="expect-div">
+    <h2>WE'LL WORK WITH YOU</h2>
+    <h1>What To Expect</h1>
+
+    <p>
+      Our collaboration is built on transparency, efficiency, and measurable
+      results. Together, we create strategies tailored to your unique needs and
+      goals.
+    </p>
+    <ul class="ul-Expect">
+      <li>
+        <Checkmark width={32} height={32} color="green" class="my-icon" />
+        Collaborate to build actionable strategies that drive sustainable growth and
+        deliver tangible outcomes.
+      </li>
+
+      <li>
+        <Checkmark width={32} height={32} color="green" class="my-icon" />
+        Identify opportunities to optimize processes and implement impactful solutions
+        with measurable results.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>ldjfhaslkdjhasdjhasdljhasdkjhasdjhsdkljæfhæljdsfh</p>
+</footer>
+
+<style>
+  /* @layer components {
+    .ul-Expect {
+      list-style: none;
+      list-style-position: 
+
+      list-style-image: url();
+    }
+  } */
+  .imgages {
+    display: flex;
+  }
+  .empoyeesImg {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      background: var(--color-ui-secondary);
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      border-radius: 20px;
+    }
+  }
+
+  .expect-div {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+  }
+  h1,
+  h2 {
+    color: var(--color-text);
+  }
+  h1 {
+    font-size: x-large;
+  }
+  ul {
+    display: grid;
+    gap: 1rem;
+    line-height: 1.5;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  li,
+  p {
+    color: var(--color-text-muted);
+  }
+
+  .my-icon {
+    content: "";
+    width: 1.6rem;
+    height: 1lh;
+  }
+</style>
