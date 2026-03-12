@@ -32,14 +32,13 @@ import ArrowRight from "@icons/arrow--right.svg";
   section {
     background-color: var(--color-ui-primary);
     color: var(--color-on-ui-primary);
-    display: grid;
-    width: full-start full-end;
+    container-type: inline-size;
 
     .value-cards {
       display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(0, 1fr);
-      /* grid-template-columns: repeat(4, 1fr); */
+      /* grid-auto-flow: column;
+      grid-auto-columns: minmax(auto, 1fr); */
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
 
       > * {
@@ -53,6 +52,14 @@ import ArrowRight from "@icons/arrow--right.svg";
         padding: 10px;
         border-radius: 99px;
         box-sizing: content-box;
+      }
+
+      @container (width < 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @container (width < 400) {
+        grid-template-columns 1fr;
       }
     }
   }
