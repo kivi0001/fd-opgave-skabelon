@@ -20,11 +20,15 @@ import ArrowRight from "@icons/arrow--right.svg";
       {
         coreValues.values.map((value) => (
           <div class="value-card">
-            <DynamicIcon name={value.icon} class="value-icon" />
+            <div class="value-icon">
+              <DynamicIcon width={22} height={22} name={value.icon} />
+            </div>
             <h3>{value.title}</h3>
             <p>{value.description}</p>
-            <a href={value.link.url}>{value.link.text}</a>
-            <ArrowRight width={22} height={22} class="arrowright-icon" />
+            <div class="arrow-link">
+              <a href={value.link.url}>{value.link.text} </a>
+              <ArrowRight width={15} height={15} class="arrowright-icon" />
+            </div>
           </div>
         ))
       }
@@ -40,10 +44,6 @@ import ArrowRight from "@icons/arrow--right.svg";
       display: grid;
       grid-template-columns: subgrid;
       grid-column: full / -1;
-
-      h2 {
-        color: var(--color-on-ui-primary);
-      }
     }
 
     .inner-container {
@@ -53,37 +53,120 @@ import ArrowRight from "@icons/arrow--right.svg";
       margin: var(--space-s) 0;
     }
 
+    .value-info {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      padding: var(--space-s) 0;
+
+      h3,
+      h2,
+      p {
+        color: var(--color-on-ui-primary);
+      }
+
+      h3 {
+        font-size: var(--space-s);
+        text-transform: uppercase;
+        grid-column: 1;
+      }
+
+      h2 {
+        font-size: var(--space-l);
+        grid-column: 1;
+      }
+
+      p {
+        font-size: var(--space-s);
+        grid-column: 1;
+        margin: auto 0;
+        max-width: 600px;
+        hyphens: auto;
+      }
+
+      .button {
+        width: fit-content;
+        background-color: var(--color-on-ui-primary);
+        color: var(--color-text);
+        padding: 0.8rem 1rem;
+        border-radius: var(--border-button);
+        font-size: var(--space-s);
+        grid-column: 4;
+        margin: 0 0 20px 0;
+      }
+    }
+
     .value-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--space-s);
+
+      .arrow-link {
+        display: flex;
+        gap: 10px;
+
+        a {
+          text-decoration: none;
+          color: var(--color-text);
+          font-weight: 600;
+        }
+      }
     }
 
     .value-card {
+      display: grid;
+      align-content: first baseline;
+      gap: 10px;
       background-color: var(--color-surface-secondary);
-      color: var(--color-text);
-      padding: 1rem;
+      border-radius: var(--border-card);
+      padding: 2rem;
+
+      h3,
+      p,
+      .arrowright-icon {
+        color: var(--color-text);
+      }
+
+      .value-icon {
+        color: #f5f5f5;
+        background-color: var(--color-ui-primary);
+        padding: 10px;
+        border-radius: var(--border-icon);
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .arrow-link {
+          display: grid;
+        }
+      }
     }
 
-    .value-icon {
-      color: #f5f5f5;
-      background-color: var(--color-ui-primary);
-      padding: 10px;
-      border-radius: 99px;
-      box-sizing: content-box;
-    }
-  }
+    /* Container querien Reagerer på .inner-container's størrelse */
+    @container cards (width < 900px) {
+      .value-cards {
+        grid-template-columns: 1fr 1fr;
+      }
 
-  /* Container querien Reagerer på .inner-container's størrelse */
-  @container cards (width < 900px) {
-    .value-cards {
-      grid-template-columns: 1fr 1fr;
+      p {
+        font-size: var(--step--1);
+      }
     }
-  }
 
-  @container cards (width < 450px) {
-    .value-cards {
-      grid-template-columns: 1fr;
+    @container cards (width < 450px) {
+      .value-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .value-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
     }
   }
 </style>
