@@ -10,9 +10,9 @@ import Checkmark from "@icons/checkmark.svg";
     <Image src={empoyeesImg} alt="CEO" />
   </div>
 
-  <div class="expect-div">
-    <h2>WE'LL WORK WITH YOU</h2>
-    <h1>What To Expect</h1>
+  <div>
+    <p>WE'LL WORK WITH YOU</p>
+    <h2>What To Expect</h2>
 
     <p>
       Our collaboration is built on transparency, efficiency, and measurable
@@ -39,67 +39,72 @@ import Checkmark from "@icons/checkmark.svg";
   <p>ldjfhaslkdjhasdjhasdljhasdkjhasdjhsdkljæfhæljdsfh</p>
 </footer>
 
+<!-- 
+ display: grid;
+  grid-template-columns:
+    [full-start] 1fr [content-start] minmax(0, var(--content-width))
+    [content-end]
+    1fr [full-end];
+  > * {
+    grid-column: content-start / content-end;
+  } -->
 <style>
-  /* @layer components {
+  @layer components {
+    /* green background */
+    .imgages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .empoyeesImg {
+      position: relative;
+      isolation: isolate;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        left: -2rem;
+        background: var(--color-ui-secondary);
+        width: 140px;
+        height: 140px;
+        z-index: -1;
+        border-radius: 20px;
+      }
+    }
+
+    h2 {
+      font-size: xx-large;
+    }
+    p:has(+ h2) {
+      color: var(--color-text);
+    }
+
     .ul-Expect {
-      list-style: none;
-      list-style-position: 
-
-      list-style-image: url();
+      display: grid;
+      gap: 1rem;
+      padding: 0;
     }
-  } */
-  .imgages {
-    display: flex;
-  }
-  .empoyeesImg {
-    position: relative;
-    isolation: isolate;
 
-    &::before {
+    .ul-Expect li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      font-size: 1rem;
+    }
+
+    .my-icon {
       content: "";
-      position: absolute;
-      top: -1rem;
-      left: -1rem;
-      background: var(--color-ui-secondary);
-      width: 100px;
-      height: 100px;
-      z-index: -1;
-      border-radius: 20px;
+      width: 1.6rem;
+      height: 1lh;
     }
-  }
-
-  .expect-div {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-  }
-  h1,
-  h2 {
-    color: var(--color-text);
-  }
-  h1 {
-    font-size: x-large;
-  }
-  ul {
-    display: grid;
-    gap: 1rem;
-    line-height: 1.5;
-  }
-
-  li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    font-size: 1rem;
-  }
-  li,
-  p {
-    color: var(--color-text-muted);
-  }
-
-  .my-icon {
-    content: "";
-    width: 1.6rem;
-    height: 1lh;
   }
 </style>
