@@ -3,19 +3,38 @@ import "../styles/global.css";
 
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 
-import financialProjections from "../data/financialProjections.json";
+import financialProjections from "@data/financialProjections.json";
+import ArrowRight from "@icons/arrow--right.svg";
+import ArrowLeft from "@icons/arrow-left.svg";
 ---
 
-<section>
+<section class="financial-projections">
   <header>
-    <h2>Financial Projections</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
+    <div>
+      <h3>{financialProjections.eyebrow}</h3>
+      <h2>{financialProjections.title}</h2>
+      <p>
+        {financialProjections.subtitle}
+      </p>
+    </div>
+    <div>
+      <ArrowLeft width={25} height={25} class="arrow-icon left" />
+      <ArrowRight width={25} height={25} class="arrow-icon right" />
+    </div>
   </header>
-
   <ScrollingContainer financialProjections={financialProjections} />
 </section>
+
+<style>
+  @layer components {
+    .financial-projections {
+      /*     display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full-start / -1;
+
+      header {
+        grid-column: content;
+      } */
+    }
+  }
+</style>

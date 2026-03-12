@@ -1,11 +1,13 @@
 ---
 import financialProjections from "@data/financialProjections.json";
+import DynamicIcon from "@helpers/DynamicIcon.astro";
 ---
 
 <ul class="full-width">
   {
     financialProjections.values.map((financial) => (
       <li>
+        <DynamicIcon name={financial.icon} class="financial-icon" />
         <h3>{financial.title}</h3>
         <p>{financial.description}</p>
       </li>
@@ -21,7 +23,7 @@ import financialProjections from "@data/financialProjections.json";
     scroll-snap-type: inline mandatory;
 
     list-style: none;
-    grid-column: full-start / full-end;
+    grid-column: 1 / -1;
 
     display: flex;
     gap: 1rem;
