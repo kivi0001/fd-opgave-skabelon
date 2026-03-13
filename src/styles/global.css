@@ -1,45 +1,46 @@
 /* Globale styles her */
-@layer global{
-:root {
-  --content-width: 1200px;
-}
-
-body {
-  margin-inline: auto;
-}
-
-main {
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, var(--content-width))
-    [content-end]
-    1fr [full-end];
-}
-
-section {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: full-start / -1;
-  > :not(&) {
-    grid-column: content;
+@layer global {
+  :root {
+    --content-width: 1200px;
   }
-}
 
-/* text  */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--color-text);
-  font-weight: var(--text-strong);
-}
-li,
-p {
-  color: var(--color-text-muted);
-}
-a {
-  font-weight: var(--text-semistrong);
-}
+  body {
+    margin-inline: auto;
+  }
 
+  main {
+    display: grid;
+    grid-template-columns:
+      [full-start] 1fr [content-start] minmax(0, var(--content-width))
+      [content-end]
+      1fr [full-end];
+  }
+
+  section,
+  header,
+  footer {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full-start / -1;
+    > :not(&) {
+      grid-column: content;
+    }
+  }
+
+  /* text  */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--color-text);
+    font-weight: var(--text-strong);
+  }
+  li,
+  p {
+    color: var(--color-text-muted);
+  }
+  a {
+    font-weight: var(--text-semistrong);
+  }
 }
