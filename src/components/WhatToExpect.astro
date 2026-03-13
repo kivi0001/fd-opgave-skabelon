@@ -39,39 +39,97 @@ import Checkmark from "@icons/checkmark.svg";
   <p>ldjfhaslkdjhasdjhasdljhasdkjhasdjhsdkljæfhæljdsfh</p>
 </footer>
 
-<!-- 
- display: grid;
-  grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, var(--content-width))
-    [content-end]
-    1fr [full-end];
-  > * {
-    grid-column: content-start / content-end;
-  } -->
 <style>
   @layer components {
-    /* green background */
     .imgages {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
     }
+
     .empoyeesImg {
       position: relative;
       isolation: isolate;
+    }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: -2rem;
-        left: -2rem;
-        background: var(--color-ui-secondary);
-        width: 140px;
-        height: 140px;
-        z-index: -1;
-        border-radius: 20px;
-      }
+    .empoyeesImg::before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      background: var(--color-ui-secondary);
+      width: 140px;
+      height: 140px;
+      z-index: -1;
+      border-radius: 20px;
+    }
+
+    h2 {
+      font-size: xx-large;
+    }
+
+    p:has(+ h2) {
+      color: var(--color-text);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .ul-Expect {
+      display: grid;
+      gap: 1rem;
+      padding: 0;
+    }
+    .ul-Expect li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+    }
+
+    .my-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  /* @layer components {
+   
+    .imgages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+
+      gap: 3rem;
+      align-items: center; */
+
+  /* display: grid;
+      grid-template-columns:; 
+      [full-start] 1fr [content-start] minmax(0, var(--content-width))
+        [content-end]
+        1fr [full-end];  
+       > * {
+        grid-column: content-start / content-end;
+      } 
+    } */
+  /* .empoyeesImg {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .empoyeesImg::before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      background: var(--color-ui-secondary);
+      width: 140px;
+      height: 140px;
+      z-index: -1;
+      border-radius: 20px;
     }
 
     h2 {
@@ -106,5 +164,5 @@ import Checkmark from "@icons/checkmark.svg";
       width: 1.6rem;
       height: 1lh;
     }
-  }
+  } */
 </style>
