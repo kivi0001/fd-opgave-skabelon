@@ -1,51 +1,137 @@
 <header>
   <div class="header-container">
     <h1>Ask<span>Experts</span></h1>
-    <ul>
-      <li><a href="index.astro">Home</a></li>
-      <li><a href="case.astro">Case Study</a></li>
-      <li><a href="team.astro">Team</a></li>
-      <li><a href="about.astro">About</a></li>
-    </ul>
-    <a href="#" class="header-button">LogIn</a>
+    <div class="nav-bar">
+      <ul>
+        <li><a href="index.astro">Home</a></li>
+        <li><a href="case.astro">Case Study</a></li>
+        <li><a href="team.astro">Team</a></li>
+        <li><a href="about.astro">About</a></li>
+      </ul>
+    </div>
+    <div class="button-nav">
+      <button popovertarget="popup" class="header-button">LogIn</button>
+    </div>
+
+    <aside id="popup" popover="manual">
+      <div class="popup-container">
+        <h2>Dashboard Login</h2>
+        <form class="form-container">
+          <p>Email adress</p>
+          <input type="email" placeholder="" />
+          <p>Password</p>
+          <input type="password" placeholder="" />
+          <button type="submit">Go to dashboard</button>
+        </form>
+      </div>
+    </aside>
   </div>
-</header>
 
-<style>
-  header {
-    > * {
-      grid-column: content;
-    }
+  <style>
+    header {
+      background-color: var(--color-ui-primary);
+      > * {
+        grid-column: content;
+      }
 
-    .header-container {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-    }
+      .header-container {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        height: 80px;
+        align-items: center;
+      }
 
-    h1 {
-      grid-column: 1;
-      align-self: center;
-    }
+      h1 {
+        color: var(--color-on-ui-primary);
+        grid-column: 1;
+        font-size: var(--step-2);
 
-    ul {
-      grid-column: 2;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+        span {
+          color: var(--color-action);
+        }
+      }
 
-    li:has(a) {
-      list-style-type: none;
+      .nav-bar {
+        grid-column: 2;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--space-s-m);
+        font-size: var(--step-0);
+        padding: 0;
+      }
 
-      a {
-        text-decoration: none;
+      li:has(a) {
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: var(--color-on-ui-primary);
+        }
+      }
+
+      .button-nav {
+        grid-column: 3;
+        justify-self: end;
+      }
+
+      .header-button {
+        background-color: var(--color-on-ui-primary);
+        color: var(--color-text);
+        padding: 0.3rem 1.5rem;
+        border-radius: var(--border-button);
+        font-size: var(--space-s);
+        width: fit-content;
       }
     }
 
-    .header-button {
-      grid-column: end;
-      align-self: center;
+    [popovertarget] {
+      anchor-name: --nav-btn;
     }
-  }
-</style>
+    [popover] {
+      position: absolute;
+      position-anchor: --nav-btn;
+      position-area: bottom span-left;
+      justify-self: anchor-center;
+      position-try: flip-inline;
+      background-color: var(--color-surface-secondary);
+      border: none;
+      box-shadow: 0px 8px 8px hsla(0, 0%, 0%, 0.151);
+      border-radius: var(--border-s);
+    }
+
+    .popup-container {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      padding: 1rem;
+      gap: 1rem;
+      align-items: center;
+      background-color: var(--color-surface-secondary);
+      color: var(--color-text);
+
+      h2 {
+        font-size: var(--step-2);
+      }
+    }
+
+    form {
+      display: grid;
+
+      input {
+        border-radius: var(--border-round);
+        padding-inline: 1rem;
+        margin-block: 0.1rlh;
+        padding: 0.8rem 2rem;
+      }
+
+      button {
+        border-radius: var(--border-round);
+        padding: 0.8rem 2rem;
+        margin-block: 1rlh;
+      }
+    }
+  </style>
+</header>

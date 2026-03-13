@@ -1,0 +1,21 @@
+---
+const { href } = Astro.props;
+const { theme = "default" } = Astro.props;
+/* importer button komponent først. På knapper skriver jeg theme="hvadendforettheme" */
+---
+
+<a href={href} data-surface={theme}><slot /></a>
+
+<style>
+  a[data-surface="default"] {
+  }
+
+  a[data-surface="white"] {
+  }
+
+  a[data-surface="black"] {
+  }
+
+  a[data-surface="outline"] {
+  }
+</style>
