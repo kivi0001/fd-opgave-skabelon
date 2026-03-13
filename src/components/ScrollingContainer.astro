@@ -6,7 +6,7 @@ import DynamicIcon from "@helpers/DynamicIcon.astro";
 <ul class="full-width">
   {
     financialProjections.values.map((financial) => (
-      <li>
+      <li class="card">
         <DynamicIcon name={financial.icon} class="financial-icon" />
         <h3>{financial.title}</h3>
         <p>{financial.description}</p>
@@ -16,23 +16,28 @@ import DynamicIcon from "@helpers/DynamicIcon.astro";
 </ul>
 
 <style>
+  :root {
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+  }
+
   ul.full-width {
-    padding-inline: max(1rem, 50% - var(--content-width) / 2);
+    grid-column: full-start / -1;
+    padding-inline: max(0.5rem, 50% - var(--content-width) / 2);
     scroll-padding-inline: 2rem;
     overflow-inline: auto;
     scroll-snap-type: inline mandatory;
 
     list-style: none;
-    grid-column: 1 / -1;
 
     display: flex;
     gap: 1rem;
 
     & li {
-      flex: 1 0 500px;
+      flex: 1 0 400px;
       scroll-snap-align: center;
       padding: var(--card-padding);
-      border-radius: var(--card-border-radius);
+      border-radius: var(--border-card);
       background-color: var(--color-surface-tertiary);
       color: var(--color-text);
     }
