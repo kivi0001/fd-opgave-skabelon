@@ -1,5 +1,5 @@
 /* Globale styles her */
-
+@layer global{
 :root {
   --content-width: 1200px;
 }
@@ -40,4 +40,6 @@ p {
 }
 a {
   font-weight: var(--text-semistrong);
+}
+
 }

@@ -16,30 +16,27 @@ import DynamicIcon from "@helpers/DynamicIcon.astro";
 </ul>
 
 <style>
-  :root {
-    --card-padding: 2.75rem 2.1875rem;
-    --card-gap: 1rem;
-  }
+  @layer components {
+    ul.full-width {
+      grid-column: full-start / -1;
+      padding-inline: max(0.5rem, 50% - var(--content-width) / 2);
+      scroll-padding-inline: 2rem;
+      overflow-inline: auto;
+      scroll-snap-type: inline mandatory;
 
-  ul.full-width {
-    grid-column: full-start / -1;
-    padding-inline: max(0.5rem, 50% - var(--content-width) / 2);
-    scroll-padding-inline: 2rem;
-    overflow-inline: auto;
-    scroll-snap-type: inline mandatory;
+      list-style: none;
 
-    list-style: none;
+      display: flex;
+      gap: 1rem;
 
-    display: flex;
-    gap: 1rem;
-
-    & li {
-      flex: 1 0 400px;
-      scroll-snap-align: center;
-      padding: var(--card-padding);
-      border-radius: var(--border-card);
-      background-color: var(--color-surface-tertiary);
-      color: var(--color-text);
+      & li {
+        flex: 1 0 400px;
+        scroll-snap-align: center;
+        padding: var(--card-padding);
+        border-radius: var(--border-card);
+        background-color: var(--color-surface-tertiary);
+        color: var(--color-text);
+      }
     }
   }
 </style>
