@@ -9,32 +9,88 @@ import ArrowLeft from "@icons/arrow-left.svg";
 ---
 
 <section class="financial-projections">
-  <header>
-    <div>
-      <h3>{financialProjections.eyebrow}</h3>
-      <h2>{financialProjections.title}</h2>
-      <p>
-        {financialProjections.subtitle}
-      </p>
-    </div>
-    <div>
-      <ArrowLeft width={25} height={25} class="arrow-icon left" />
-      <ArrowRight width={25} height={25} class="arrow-icon right" />
-    </div>
-  </header>
+  <div class="container-div">
+    <header>
+      <div class="financial-text-div">
+        <h3>{financialProjections.eyebrow}</h3>
+        <h2>{financialProjections.title}</h2>
+        <p>
+          {financialProjections.subtitle}
+        </p>
+      </div>
+
+      <div class="arrows">
+        <ArrowLeft
+          width={50}
+          height={50}
+          color="white"
+          class="arrow-icon left"
+        />
+        <ArrowRight
+          width={50}
+          height={50}
+          color="white"
+          class="arrow-icon right"
+        />
+      </div>
+    </header>
+  </div>
   <ScrollingContainer financialProjections={financialProjections} />
 </section>
 
 <style>
   @layer components {
-    .financial-projections {
-      /*     display: grid;
-      grid-template-columns: subgrid;
+    section {
       grid-column: full-start / -1;
 
+      .container-div {
+        container-type: inline-size;
+      }
+
       header {
-        grid-column: content;
-      } */
+        display: flex;
+        justify-content: space-between;
+        grid-column: content-start / content-end;
+
+        .financial-text-div {
+          max-width: 600px;
+        }
+
+        .arrows {
+          display: flex;
+          gap: var(--space-xs);
+          margin-top: auto;
+
+          > * {
+            background: var(--color-ui-primary);
+            padding: var(--space-xs);
+            border-radius: var(--border-round);
+          }
+          @container (width < 680px) {
+            .arrows {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 </style>
+
+<script>
+  const productContainers = [...document.querySelectorAll(".full-width")];
+  const nxtBtn = [...document.querySelectorAll(".right")];
+  const preBtn = [...document.querySelectorAll(".left")];
+
+  productContainers.forEach((item, i) => {
+    let cardWidth = item.querySelector("li").getBoundingClientRect().width;
+
+    nxtBtn[i].addEventListener("click", () => {
+      item.scrollLeft += cardWidth;
+    });
+
+    preBtn[i].addEventListener("click", () => {
+      item.scrollLeft -= cardWidth;
+    });
+  });
+</script>
