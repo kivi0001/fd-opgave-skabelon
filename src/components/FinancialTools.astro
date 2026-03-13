@@ -9,8 +9,8 @@ import ArrowLeft from "@icons/arrow-left.svg";
 ---
 
 <section class="financial-projections">
-  <div class="container-div">
-    <header>
+  <header>
+    <div class="container-div">
       <div class="financial-text-div">
         <h3>{financialProjections.eyebrow}</h3>
         <h2>{financialProjections.title}</h2>
@@ -33,8 +33,8 @@ import ArrowLeft from "@icons/arrow-left.svg";
           class="arrow-icon right"
         />
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
   <ScrollingContainer financialProjections={financialProjections} />
 </section>
 
@@ -45,12 +45,12 @@ import ArrowLeft from "@icons/arrow-left.svg";
 
       .container-div {
         container-type: inline-size;
+        display: flex;
+        justify-content: space-between;
       }
 
       header {
-        display: flex;
-        justify-content: space-between;
-        grid-column: content-start / content-end;
+        grid-column: content;
 
         .financial-text-div {
           max-width: 600px;
@@ -66,10 +66,10 @@ import ArrowLeft from "@icons/arrow-left.svg";
             padding: var(--space-xs);
             border-radius: var(--border-round);
           }
-          @container (width < 680px) {
-            .arrows {
-              display: none;
-            }
+        }
+        @container (width < 680px) {
+          .arrows {
+            display: none;
           }
         }
       }
