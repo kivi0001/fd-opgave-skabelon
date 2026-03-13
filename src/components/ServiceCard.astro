@@ -14,9 +14,13 @@ import ArrowRight from "@icons/arrow--right.svg";
   @layer components {
     article {
       background: var(--color-blue-700-transparent);
-      color: var(--color-on-surface-elevated);
-      padding: 2rem; /* Dette burde være en token */
-      border-radius: 20px; /* Dette burde være en token */
+      padding: var(--card-padding); /* Dette burde være en token */
+      border-radius: var(--border-s); /* Dette burde være en token */
+
+      h2,
+      p {
+        color: var(--color-on-surface-elevated);
+      }
     }
     a {
       display: inline flex;
