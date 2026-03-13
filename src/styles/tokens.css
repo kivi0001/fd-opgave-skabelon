@@ -92,7 +92,9 @@
 --border-green-box: var(--border-s);
 --border-icon: var(--border-round);
 
-/* ==== Padding ==== */
+/* ==== Padding og Gaps ==== */
 
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
 
 }
