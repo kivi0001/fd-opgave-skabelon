@@ -3,6 +3,7 @@
 import coreValues from "@data/coreValues.json";
 import DynamicIcon from "@helpers/DynamicIcon.astro";
 import ArrowRight from "@icons/arrow--right.svg";
+import Button from "@components/Buttons.astro";
 ---
 
 <section class="value-container">
@@ -12,9 +13,11 @@ import ArrowRight from "@icons/arrow--right.svg";
       <h3>{coreValues.eyebrow}</h3>
       <h2>{coreValues.title}</h2>
       <p>{coreValues.subtitle}</p>
-      <a href={coreValues.button.link} class="button"
-        >{coreValues.button.text}</a
-      >
+      <div class="button">
+        <Button theme="black">
+          {coreValues.button.text}
+        </Button>
+      </div>
     </div>
     <div class="value-cards">
       {
@@ -39,7 +42,8 @@ import ArrowRight from "@icons/arrow--right.svg";
 <style>
   @layer components {
     .value-container {
-      background-color: var(--color-ui-primary);
+      /* background-color: var(--color-ui-primary); */
+      background-color: red;
       color: var(--color-on-ui-primary);
       display: grid;
       grid-template-columns: subgrid;
@@ -85,12 +89,12 @@ import ArrowRight from "@icons/arrow--right.svg";
       }
 
       .button {
-        width: fit-content;
-        background-color: var(--color-on-ui-primary);
+        /* width: fit-content; */
+        /* background-color: var(--color-on-ui-primary);
         color: var(--color-text);
         padding: 0.8rem 1rem;
         border-radius: var(--border-button);
-        font-size: var(--space-s);
+        font-size: var(--space-s); */
         grid-column: 4;
         margin: 0 0 20px 0;
       }
