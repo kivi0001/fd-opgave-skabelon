@@ -94,8 +94,12 @@
       display: none;
       width: 100%;
       text-align: center;
-      background-color: var(--color-dropdownmenu);
-      padding: 1rem 0 0;
+      background-color: color-mix(
+        in srgb,
+        var(--color-dropdownmenu) 60%,
+        transparent
+      );
+      backdrop-filter: blur(5px);
       position: relative;
       grid-column: full-start / -1;
     }
@@ -168,6 +172,15 @@
 
     p {
       color: var(--color-text);
+      font-size: var(--step-0);
+    }
+
+    input {
+      padding-block: var(--button-padding);
+      padding: var(--button-padding);
+      border-radius: var(--border-round);
+      margin-block: 0.2rlh;
+      outline: none;
     }
   }
 
@@ -175,19 +188,20 @@
     display: grid;
 
     input {
-      border-radius: var(--border-round);
+      /* border-radius: var(--border-round);
       margin-block: 0.2rlh;
-      padding: 0.8rem 2rem;
-      outline: none;
+      outline: none; */
     }
 
     .submit-button {
       background-color: var(--color-action);
       color: var(--color-text);
       font-weight: 600;
+      /* font-weight: var(--text-semistrong); */
+      font-size: var(--step-0);
       border: none;
       border-radius: var(--border-round);
-      padding: 0.8rem 2rem;
+      padding: var(--button-padding);
       margin-block: 0.8rlh;
     }
   }
@@ -206,13 +220,20 @@
       background-color: var(--color-dropdownmen);
       color: var(--color-surface-tertiary);
       padding: 0.8rem 1.5rem;
-      font-size: 1rem;
+      font-size: var(--step-2);
       border: none;
       border-radius: 4px;
       cursor: pointer;
       display: inline-block;
       position: relative;
       z-index: 1;
+
+      span {
+        color: var(--color-action);
+        font-weight: 900;
+        font-size: var(--step-3);
+        padding-inline-start: 10px;
+      }
     }
 
     .dropdown-content {
@@ -228,7 +249,7 @@
       padding: 0 2rem;
     }
 
-    /* Vis dropdown-indholdet */
+    /* Viser dropdown */
     .dropdown-content.show {
       display: block;
     }
@@ -241,13 +262,15 @@
       border: none;
       cursor: pointer;
       text-align: center;
-      color: var(--color-surface-tertiary);
+      font-weight: bold;
+      color: var(--color-action);
     }
 
     /* Links i dropdown */
     .dropdown-content a {
       color: var(--color-surface-tertiary);
-      border-bottom: 1px solid var(--color-surface-tertiary);
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--color-surface-tertiary) 30%, transparent);
       padding: 0.8rem 1rem;
       text-decoration: none;
       display: block;
