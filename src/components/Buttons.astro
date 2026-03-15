@@ -10,7 +10,7 @@ const { theme = "default" } = Astro.props;
   a[data-surface="default"] {
     width: fit-content;
     color: var(--color-text);
-    padding: 0.8rem 1rem;
+    padding: 0.3rem 1.5rem;
     border-radius: var(--border-button);
     font-size: var(--space-s);
     --base-color: var(--color-on-ui-primary);
@@ -50,6 +50,7 @@ const { theme = "default" } = Astro.props;
     color: white;
     padding: 0.8rem 1rem;
     border-radius: var(--border-button);
+    border: solid 1px white;
     font-size: var(--space-s);
     --base-color: black;
 
@@ -60,14 +61,61 @@ const { theme = "default" } = Astro.props;
     );
 
     &:hover {
-      --mix-with: 60% #414141;
+      --mix-with: 100% white;
+      color: var(--color-text);
+      border: solid 1px var(--color-ui-primary);
     }
 
     &:active {
-      --mix-with: 50% #646464;
+      --mix-with: 90% #f6f6f6;
     }
   }
 
   a[data-surface="outline"] {
+    width: fit-content;
+    color: var(--color-text);
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-button);
+    border: solid 1px var(--color-ui-primary);
+    font-size: var(--space-s);
+    --base-color: rgb(255, 255, 255);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 40% #ffffffbd;
+      color: var(--color-text);
+      border: solid 1px black;
+    }
+
+    &:active {
+      --mix-with: 20% #ffffff;
+    }
+  }
+
+  a[data-surface="yellow"] {
+    width: fit-content;
+    color: var(--color-text);
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-button);
+    font-size: var(--space-s);
+    --base-color: var(--color-action);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 5% #000;
+    }
+
+    &:active {
+      --mix-with: 15% #000;
   }
 </style>

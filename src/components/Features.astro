@@ -14,7 +14,7 @@ import Button from "@components/Buttons.astro";
       <h2>{coreValues.title}</h2>
       <p>{coreValues.subtitle}</p>
       <div class="button">
-        <Button theme="black">
+        <Button theme="white">
           {coreValues.button.text}
         </Button>
       </div>
@@ -42,8 +42,7 @@ import Button from "@components/Buttons.astro";
 <style>
   @layer components {
     .value-container {
-      /* background-color: var(--color-ui-primary); */
-      background-color: red;
+      background-color: var(--color-ui-primary);
       color: var(--color-on-ui-primary);
       display: grid;
       grid-template-columns: subgrid;

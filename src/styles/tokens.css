@@ -9,6 +9,7 @@
   --color-neutrals-700: #5a606f;
   --color-blue-700: #101828;
   --color-blue-700-transparent: rgba(16 24 40 / 0.9);
+  --color-blue-800: #28303e;
   --color-green-600: #4bb84b;
   --color-neutrals-100: #f9fafb;
   --color-neutrals-400: #99a1af;
@@ -31,6 +32,7 @@
   --color-text-weak: var(--color-neutrals-400);
   --color-surface-highlight: var(--color-yellow-600);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
+  --color-dropdownmenu: var(--color-blue-800);
 
   /* ==== Spacing ==== */
   /* @link https://utopia.fyi/space/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
