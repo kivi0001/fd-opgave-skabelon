@@ -1,6 +1,7 @@
 ---
 import employees from "@data/employees.json";
 import DynamicImage from "@components/helpers/DynamicImage.astro";
+import DynamicIcon from "@components/helpers/DynamicIcon.astro";
 ---
 
 <div class="employee-cards">
@@ -19,8 +20,16 @@ import DynamicImage from "@components/helpers/DynamicImage.astro";
         <p class="description">{id.description}</p>
 
         <div class="socials">
-          <a href="#">{id.social_links}</a>
-          <a href="#">{id.social_links}</a>
+          {id.social_links.map((link) => (
+            <a href={link.url}>
+              <DynamicIcon
+                color="black"
+                width={20}
+                height={20}
+                name={link.icon}
+              />
+            </a>
+          ))}
         </div>
       </div>
     ))
@@ -42,7 +51,7 @@ import DynamicImage from "@components/helpers/DynamicImage.astro";
       padding: var(--card-padding-new);
       text-align: center;
 
-      div {
+      .img-and-title {
         display: grid;
         grid-template-columns: [text-start] 1fr [text-end];
         grid-template-rows: 4fr [text-start] 1fr [text-end];
@@ -63,6 +72,12 @@ import DynamicImage from "@components/helpers/DynamicImage.astro";
           color: var(--color-on-ui-primary);
           border-radius: var(--border-round);
         }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: space-evenly;
+        padding-inline: var(--space-xl);
       }
     }
   }
