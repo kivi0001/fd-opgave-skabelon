@@ -5,80 +5,86 @@ import empoyeesImg from "@assets/images/img/empoyeesimg.png";
 import Checkmark from "@icons/checkmark.svg";
 ---
 
-<section class="imgages">
-  <div class="empoyeesImg">
-    <Image src={empoyeesImg} alt="CEO" />
-  </div>
+<section>
+  <div class="container">
+    <div class="empoyeesImg">
+      <Image src={empoyeesImg} alt="CEO" />
+    </div>
 
-  <div>
-    <p>WE'LL WORK WITH YOU</p>
-    <h2>What To Expect</h2>
+    <div class="content">
+      <p>WE'LL WORK WITH YOU</p>
+      <h2>What To Expect</h2>
 
-    <p>
-      Our collaboration is built on transparency, efficiency, and measurable
-      results. Together, we create strategies tailored to your unique needs and
-      goals.
-    </p>
-    <ul class="ul-Expect">
-      <li>
-        <Checkmark width={32} height={32} color="green" class="my-icon" />
-        Collaborate to build actionable strategies that drive sustainable growth and
-        deliver tangible outcomes.
-      </li>
+      <p>
+        Our collaboration is built on transparency, efficiency, and measurable
+        results. Together, we create strategies tailored to your unique needs
+        and goals.
+      </p>
 
-      <li>
-        <Checkmark width={32} height={32} color="green" class="my-icon" />
-        Identify opportunities to optimize processes and implement impactful solutions
-        with measurable results.
-      </li>
-    </ul>
+      <ul class="ul-Expect">
+        <li>
+          <Checkmark width={32} height={32} color="green" class="my-icon" />
+          Collaborate to build actionable strategies that drive sustainable growth
+          and deliver tangible outcomes.
+        </li>
+
+        <li>
+          <Checkmark width={32} height={32} color="green" class="my-icon" />
+          Identify opportunities to optimize processes and implement impactful solutions
+          with measurable results.
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p>ldjfhaslkdjhasdjhasdljhasdkjhasdjhsdkljæfhæljdsfh</p>
-</footer>
-
-<!-- 
- display: grid;
-  grid-template-columns:
-    [full-start] 1fr [content-start] minmax(0, var(--content-width))
-    [content-end]
-    1fr [full-end];
-  > * {
-    grid-column: content-start / content-end;
-  } -->
 <style>
   @layer components {
     /* green background */
-    .imgages {
+
+    .container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns:
+        [start] 450px
+        [end] 1fr;
+      gap: 2rem;
       align-items: center;
+    }
+
+    /* Mobil */
+    @media (max-width: 868px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .empoyeesImg {
+        /* order: -1; */
+      }
     }
     .empoyeesImg {
       position: relative;
       isolation: isolate;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -2rem;
-        left: -2rem;
-        background: var(--color-ui-secondary);
-        width: 140px;
-        height: 140px;
-        z-index: -1;
-        border-radius: 20px;
-      }
     }
 
+    .empoyeesImg::before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      background: var(--color-ui-secondary);
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      z-index: -1;
+    }
     h2 {
       font-size: xx-large;
+      font-family: var(--font-heading);
     }
     p:has(+ h2) {
       color: var(--color-text);
+      line-height: var(--space-xl);
+      margin-block-start: calc(0.5cap - 0.2lh);
     }
 
     .ul-Expect {
