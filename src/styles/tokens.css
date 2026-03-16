@@ -96,6 +96,8 @@
 
   --card-padding: 2.75rem 2.1875rem;
   --card-gap: 1rem;
+  --button-padding: clamp(0.6rem, calc(0.1rem + 1.667vw), 0.8rem)
+    clamp(0.5rem, calc(0rem + 2.5vw), 2rem);
 
   /* === font === */
   --font-body: "Lato", sans-serif;
@@ -143,8 +145,5 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  --button-padding: clamp(0.6rem, calc(0.1rem + 1.667vw), 0.8rem)
-    clamp(0.5rem, calc(0rem + 2.5vw), 2rem);
-  --card-padding: 2.75rem 2.1875rem;
-  --card-gap: 1rem;
+
 }
