@@ -83,7 +83,6 @@ import Button from "@components/Buttons.astro";
       flex-wrap: wrap;
       width: 100%;
       align-items: center;
-
       h1 {
         color: var(--color-on-ui-primary);
         font-size: var(--step-2);
@@ -101,10 +100,11 @@ import Button from "@components/Buttons.astro";
     }
   }
 
-  @media (width < 870px) {
+  @media (width < 700px) {
     .footer-bottom {
       display: grid !important;
       grid-template-columns: 1fr;
+      margin-block-start: 1rem;
       gap: 0.5rem;
     }
   }
