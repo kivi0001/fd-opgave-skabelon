@@ -9,6 +9,7 @@
   --color-neutrals-700: #5a606f;
   --color-blue-700: #101828;
   --color-blue-700-transparent: rgba(16 24 40 / 0.9);
+  --color-blue-800: #28303e;
   --color-green-600: #4bb84b;
   --color-neutrals-100: #f9fafb;
   --color-neutrals-400: #99a1af;
@@ -31,10 +32,10 @@
   --color-text-weak: var(--color-neutrals-400);
   --color-surface-highlight: var(--color-yellow-600);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
+  --color-dropdownmenu: var(--color-blue-800);
 
-
-/* ==== Spacing ==== */
-/* @link https://utopia.fyi/space/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* ==== Spacing ==== */
+  /* @link https://utopia.fyi/space/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
   --space-3xs: clamp(0.1875rem, 0.1296rem + 0.2439cqi, 0.3125rem);
   --space-2xs: clamp(0.375rem, 0.2881rem + 0.3659cqi, 0.5625rem);
@@ -59,9 +60,8 @@
   /* Custom pairs */
   --space-s-l: clamp(0.75rem, 0.0549rem + 2.9268cqi, 2.25rem);
 
-
-/* ==== Typography ==== */
-/* @link https://utopia.fyi/type/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* ==== Typography ==== */
+  /* @link https://utopia.fyi/type/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
   --step--2: clamp(0.5208rem, 0.4285rem + 0.3886cqi, 0.72rem);
   --step--1: clamp(0.625rem, 0.4976rem + 0.5366cqi, 0.9rem);
@@ -75,26 +75,26 @@
   --text-strong: bold;
   --text-semistrong: 400;
 
-/* ==== Border Radii ==== */
-/* PRIMITIVES */
+  /* ==== Border Radii ==== */
+  /* PRIMITIVES */
 
---border-s: 20px;
---border-m: 30px;
---border-round: 999px;
+  --border-s: 20px;
+  --border-m: 30px;
+  --border-round: 999px;
 
-/* TOKENS */
+  /* TOKENS */
 
---border-image: var(--border-s);
---border-card: var(--border-s);
---border-case-overview: var(--border-m);
---border-button: var(--border-round);
---border-input: var(--border-round);
---border-green-box: var(--border-s);
---border-icon: var(--border-round);
+  --border-image: var(--border-s);
+  --border-card: var(--border-s);
+  --border-case-overview: var(--border-m);
+  --border-button: var(--border-round);
+  --border-input: var(--border-round);
+  --border-green-box: var(--border-s);
+  --border-icon: var(--border-round);
 
-/* ==== Padding og Gaps ==== */
-
-    --card-padding: 2.75rem 2.1875rem;
-    --card-gap: 1rem;
-
+  /* ==== Padding og Gaps ==== */
+  --button-padding: clamp(0.6rem, calc(0.1rem + 1.667vw), 0.8rem)
+    clamp(0.5rem, calc(0rem + 2.5vw), 2rem);
+  --card-padding: 2.75rem 2.1875rem;
+  --card-gap: 1rem;
 }
