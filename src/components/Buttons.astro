@@ -1,0 +1,127 @@
+---
+const { href } = Astro.props;
+const { theme = "default" } = Astro.props;
+/* importer button komponent først. På knapper skriver jeg theme="hvadendforettheme" */
+---
+
+<a href={href} data-surface={theme}><slot /></a>
+
+<style>
+  a[data-surface="default"] {
+    width: fit-content;
+    align-content: center;
+    color: var(--color-text);
+    padding: var(--button-padding);
+    border-radius: var(--border-button);
+    font-size: var(--step-0);
+    --base-color: var(--color-on-ui-primary);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+  }
+
+  a[data-surface="white"] {
+    width: fit-content;
+    align-content: center;
+    color: var(--color-text);
+    padding: var(--button-padding);
+    border-radius: var(--border-button);
+    font-size: var(--step-0);
+    --base-color: var(--color-on-ui-primary);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 10% #000;
+    }
+
+    &:active {
+      --mix-with: 20% #000;
+    }
+  }
+
+  a[data-surface="black"] {
+    width: fit-content;
+    align-content: center;
+    color: white;
+    padding: var(--button-padding);
+    border-radius: var(--border-button);
+    border: solid 1px white;
+    font-size: var(--step-0);
+    --base-color: black;
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 100% white;
+      color: var(--color-text);
+      border: solid 1px var(--color-ui-primary);
+    }
+
+    &:active {
+      --mix-with: 90% #f6f6f6;
+    }
+  }
+
+  a[data-surface="outline"] {
+    width: fit-content;
+    align-content: center;
+    color: var(--color-text);
+    padding: var(--button-padding);
+    border-radius: var(--border-button);
+    border: solid 1px var(--color-ui-primary);
+    font-size: var(--step-0);
+    --base-color: rgb(255, 255, 255);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 40% #ffffffbd;
+      color: var(--color-text);
+      border: solid 1px black;
+    }
+
+    &:active {
+      --mix-with: 20% #ffffff;
+    }
+  }
+
+  a[data-surface="yellow"] {
+    width: fit-content;
+    align-content: center;
+    color: var(--color-text);
+    padding: var(--button-padding);
+    border-radius: var(--border-button);
+    font-size: var(--step-0);
+    --base-color: var(--color-action);
+
+    background: color-mix(
+      in oklab,
+      var(--base-color),
+      var(--mix-with, 0% #fff)
+    );
+
+    &:hover {
+      --mix-with: 5% #000;
+    }
+
+    &:active {
+      --mix-with: 15% #000;
+    }
+  }
+</style>
