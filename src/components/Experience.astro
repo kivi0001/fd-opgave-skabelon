@@ -26,9 +26,9 @@ import experience from "@data/experience.json";
 
 <style>
   @layer components {
-    .experience-container {
-      background-color: var(--color-action);
-      padding: var(--space-l-xl);
+  .experience-container {
+      background-color: var(--color-surface-highlight);
+      padding: var(--space-m-l);
 
       .inner-container {
         display: grid;
@@ -43,12 +43,15 @@ import experience from "@data/experience.json";
           .eyebrow {
             color: var(--color-text);
             text-transform: uppercase;
-            font-size: var(--step-0);
+            font-size: var(--step--1);
+            letter-spacing: 3px;
           }
 
           .title {
             color: var(--color-text);
-            font-size: var(--step-1);
+            font-size: var(--step-3);
+            display: block;
+            max-width: 20rem;
           }
 
           .subtitle {
@@ -64,7 +67,7 @@ import experience from "@data/experience.json";
         flex-direction: row;
         gap: 1rem;
         justify-content: center;
-        padding: var(--space-s-l);
+        padding: var(--space-s);
         font-weight: 600;
       }
 
@@ -82,7 +85,7 @@ import experience from "@data/experience.json";
       }
 
       .stat {
-        --animatedNumber: 0;
+        --animatedNumber: var(--percent);
         --percentage: calc(var(--animatedNumber) * 1%);
         --actual-percent: calc(var(--percent) * 1);
         --border-width: 5px;
@@ -98,16 +101,16 @@ import experience from "@data/experience.json";
               #0000 0
             )
             border-box,
-          linear-gradient(var(--color-action)) padding-box,
+          linear-gradient(var(--color-surface-highlight)) padding-box,
           conic-gradient(white var(--percentage), #daae3c 0) border-box;
         display: grid;
         container stat / inline-size;
         transition: --animatedNumber 2s;
+        animation: background-animation linear;
+        animation-timeline: scroll(nearest inline);
 
         &:hover {
-          --animatedNumber: var(--percent);
-           animation-timeline: scroll();
-    animation-range: 0 100svh;
+          --animatedNumber: 100;
         }
         
 
