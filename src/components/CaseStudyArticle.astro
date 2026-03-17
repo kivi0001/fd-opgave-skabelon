@@ -78,11 +78,6 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       grid-template-columns: subgrid;
       grid-column: full / -1;
       text-wrap: pretty;
-      /* > * + *
-      margin-block-start: var(--flow-space-1); */
-      /* > * + * {
-        margin-block-start: var(--flow-space, 0.5rlh);
-      } */
     }
 
     header {
@@ -98,7 +93,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       }
       .case-details {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
         align-items: center;
         background-color: var(--color-ui-primary);
@@ -152,21 +147,23 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       display: grid;
       grid-column: content;
       padding-inline: var(--space-3xl);
-      gap: var(--space-s);
-      margin-inline: auto;
+      gap: var(--space-xs);
+      > * + * {
+        margin-top: var(--flow-space, 0.5rlh);
+      }
 
       > * {
         width: 100%;
-        max-width: 850px;
+        max-width: 900px;
         margin-inline: auto;
       }
-
       h2 {
         font-size: var(--step-3);
-        margin-block-start: 1.5rlh;
+        margin-top: var(--flow-space, 2rlh);
       }
       h3 {
         font-size: var(--step-2);
+        margin-top: var(--flow-space, 1rlh);
       }
 
       p {
@@ -180,6 +177,9 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
       img {
         margin-inline: auto;
+        width: 100%;
+        display: block;
+        object-fit: cover;
       }
     }
   }

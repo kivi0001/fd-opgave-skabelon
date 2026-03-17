@@ -60,11 +60,6 @@
   /* Custom pairs */
   --space-s-l: clamp(0.75rem, 0.0549rem + 2.9268cqi, 2.25rem);
 
-  /* === flow-space === */
-  --flow-space-1: 0.5rlh;
-  --flow-space-2: 1rlh;
-  --flow-space-3: 1.5rlh;
-
   /* ==== Typography ==== */
   /* @link https://utopia.fyi/type/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
