@@ -2,28 +2,37 @@
 //@ts-nocheck
 import DynamicImage from "@components/helpers/DynamicImage.astro";
 import caseStudy from "@data/caseStudy.json";
+import Button from "@components/Buttons.astro";
 const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <article>
   <header>
-    <DynamicImage imagePath={image} altText={caseName} />
-    <div class="case-details">
-      <dl>
-        <div>
-          <dt>Case Name</dt>
-          <dd>{caseName}</dd>
+    <div class="header-container">
+      <div class="headerimg">
+        <DynamicImage imagePath={image} altText={caseName} />
+      </div>
+      <div class="case-details">
+        <dl>
+          <div>
+            <dt>Case Name</dt>
+            <dd>{caseName}</dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd class="category">{category}</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
+            <dd class="date">{date}</dd>
+          </div>
+        </dl>
+        <div class="button">
+          <Button theme="yellow">
+            {buttonLabel}
+          </Button>
         </div>
-        <div>
-          <dt>Category</dt>
-          <dd class="category">{category}</dd>
-        </div>
-        <div>
-          <dt>Date</dt>
-          <dd class="date">{date}</dd>
-        </div>
-      </dl>
-      <a href="#0" class="button">{buttonLabel}</a>
+      </div>
     </div>
   </header>
   {
@@ -64,4 +73,31 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   }
 </article>
 
-<style></style>
+<style>
+  @layer components {
+    article {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full / -1;
+      text-wrap: pretty;
+    }
+
+    header {
+      grid-column: content;
+    }
+
+    .header-container {
+      .headerimg img {
+        border-radius: var(--border-s);
+      }
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    section {
+      display: grid;
+      gap: var(--space-s);
+    }
+  }
+</style>
