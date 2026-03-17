@@ -60,6 +60,11 @@
   /* Custom pairs */
   --space-s-l: clamp(0.75rem, 0.0549rem + 2.9268cqi, 2.25rem);
 
+  /* === flow-space === */
+  --flow-space-1: 0.5rlh;
+  --flow-space-2: 1rlh;
+  --flow-space-3: 1.5rlh;
+
   /* ==== Typography ==== */
   /* @link https://utopia.fyi/type/calculator?c=380,12,1.2,1200,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
@@ -103,7 +108,7 @@
   --section-padding-s: var(--space-xs);
   --section-padding-m: var(--space-m);
   --section-padding-l: var(--space-xl);
-  
+
   --element-spacing: var(--space-l);
   --card-padding-new: var(--space-m);
   --card-gap-new: var(--space-xs);
@@ -111,7 +116,7 @@
   --button-padding: clamp(0.6rem, calc(0.1rem + 1.667vw), 0.8rem)
     clamp(0.5rem, calc(0rem + 2.5vw), 2rem);
 
-    /* EARLY VERSIONS */
+  /* EARLY VERSIONS */
   --card-padding: 2.75rem 2.1875rem;
   --card-gap: 1rem;
 
@@ -161,5 +166,4 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-
 }

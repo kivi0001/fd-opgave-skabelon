@@ -78,10 +78,11 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       grid-template-columns: subgrid;
       grid-column: full / -1;
       text-wrap: pretty;
-
-      > * + * {
+      /* > * + *
+      margin-block-start: var(--flow-space-1); */
+      /* > * + * {
         margin-block-start: var(--flow-space, 0.5rlh);
-      }
+      } */
     }
 
     header {
