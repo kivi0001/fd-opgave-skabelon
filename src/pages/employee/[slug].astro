@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+import employees from "@data/employees.json";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  return employees.map((employee) => ({
+    params: { slug: employee.slug },
+    props: { employee },
+  }));
+}
+
+const { employee } = Astro.props;
+---
+
+<Layout>
+  <section>
+    <div class="img-and-socials">
+      <Image
+        src={employee.img}
+        alt={employee.name}
+        width={300}
+        height={300}
+        class="image-portrait"
+      />
+      <div class="socials-div">icons</div>
+    </div>
+    <div class="presentation-text">
+      <h2>{employee.name}</h2>
+      <h3>{employee.title}</h3>
+      <p>{employee.description_long}</p>
+      <h2>Past experience</h2>
+      <p>{employee.past_experience}</p>
+    </div>
+  </section>
+</Layout>

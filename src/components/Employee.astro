@@ -17,7 +17,9 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
           <p>{id.title}</p>
         </div>
         <h3 class="name">
-          <a href="#0">{id.name}</a>
+          <a class="link-name" href={`/employee/${id.slug}`}>
+            {id.name}
+          </a>
         </h3>
         <p class="description">{id.description}</p>
 
@@ -116,3 +118,23 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
     }
   }
 </style>
+
+<!-- <script>
+
+    async function memberpage() {
+
+    const teamMember = document.querySelector(".link-name")${id.slug};
+
+      const response = await fetch(
+        {id.slug}
+    )
+
+    const teamMembers = await response.json();
+
+    const member = teamMembers.find((m) => m.teamMember) {
+        teamMember {
+    window.location.href = '/{id.slug}';
+        }
+    }
+}
+</script> -->
