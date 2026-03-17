@@ -1,15 +1,21 @@
 ---
 import Employee from "./Employee.astro";
+import Buttons from "./Buttons.astro";
 ---
 
 <section>
-  <h2>Meet Our Great Team</h2>
-  <p>
-    Welcome to our amazing team! We are a group of passionate individuals
-    dedicated to excellence and innovation. Each member brings unique skills and
-    experiences, working together to achieve our goals. Join us as we embark on
-    exciting projects and create lasting impacts.
-  </p>
+  <div class="header-div">
+    <div class="team-text-div">
+      <h2>Meet Our Great Team</h2>
+      <p>
+        Welcome to our amazing team! We are a group of passionate individuals
+        dedicated to excellence and innovation. Each member brings unique skills
+        and experiences, working together to achieve our goals. Join us as we
+        embark on exciting projects and create lasting impacts.
+      </p>
+    </div>
+    <Buttons class="team-button" theme="black">Join our team</Buttons>
+  </div>
   <section class="employee-section">
     <Employee />
   </section>
@@ -17,7 +23,17 @@ import Employee from "./Employee.astro";
 
 <style>
   @layer components {
-    .employee-section {
+    .header-div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(0, var(--content-width)));
+
+      .team-text-div {
+        max-width: calc(var(--content-width) / 2);
+      }
+      a {
+        align-self: end;
+        justify-self: end;
+      }
     }
   }
 </style>

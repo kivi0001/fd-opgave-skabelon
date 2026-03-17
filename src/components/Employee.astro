@@ -16,14 +16,16 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
           />
           <p>{id.title}</p>
         </div>
-        <h3 class="name">{id.name}</h3>
+        <h3 class="name">
+          <a href="#0">{id.name}</a>
+        </h3>
         <p class="description">{id.description}</p>
 
         <div class="socials">
           {id.social_links.map((link) => (
             <a href={link.url}>
               <DynamicIcon
-                color="black"
+                class="icons"
                 width={20}
                 height={20}
                 name={link.icon}
@@ -50,6 +52,33 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
     .employee-card {
       padding: var(--card-padding-new);
       text-align: center;
+      position: relative;
+
+      > div {
+        position: inherit;
+
+        .icons {
+          position: relative;
+          z-index: 1;
+          &:hover {
+            color: var(--color-action);
+          }
+        }
+      }
+
+      h3 a {
+        &::after {
+          content: "";
+          position: absolute;
+          /*
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    */
+          inset: 0;
+        }
+      }
 
       .img-and-title {
         display: grid;
@@ -65,6 +94,7 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
         p {
           grid-area: text;
           text-align: end;
+          margin-block: trim;
           padding-inline: var(--space-xs);
           padding-top: var(--space-2xs);
           margin: 0 var(--space-2xs) var(--space-2xs) auto;
@@ -78,6 +108,10 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
         display: flex;
         justify-content: space-evenly;
         padding-inline: var(--space-xl);
+
+        .icons {
+          color: black;
+        }
       }
     }
   }
