@@ -73,7 +73,7 @@
   --step-5: clamp(1.8662rem, 1.1401rem + 3.0575cqi, 3.4332rem);
 
   --text-strong: bold;
-  --text-semistrong: 400;
+  --text-semistrong: 600;
 
   /* ==== Border Radii ==== */
   /* PRIMITIVES */
@@ -115,50 +115,58 @@
   --card-padding: 2.75rem 2.1875rem;
   --card-gap: 1rem;
 
-  /* === font === */
-  --font-body: "Lato", sans-serif;
-  --font-heading: "Cabin", sans-serif;
+  /* === font primitives === */
+  --cabin-regular: "Cabinregular";
+  --cabin-semibold: "Cabinsemibold";
+  --cabin-bold: "Cabinbold";
+  --lato-regular: "Latoregular";
+  --lato-bold: "Latobold";
+
+  /* === font tokens === */
+  --h1-size: var(--step-4);
+  --h2-size: var(--step-3);
+  --h3-size: var(--step-2);
+  --h4-size: var(--step-1);
+  --p-size: var(--step-0);
+  --li-size: var(--step-0);
+  --button-size: var(--step-1);
+  --a-size: var(--step-0);
+
+  --h1-font: var(--cabin-bold);
+  --h2-font: var(--cabin-semibold);
+  --h3-font: var(--cabin-semibold);
+  --h4-font: var(--cabin-regular);
+  --p-font: var(--lato-regular);
+  --li-font: var(--lato-regular);
+  --button-font: var(--lato-regular);
+  --a-font: var(--lato-regular);
 }
 
 /* === font === */
+
 /* Cabin */
 @font-face {
-  font-family: "Cabin";
-  src: url("../assets/font/Cabin/Cabin-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Cabinregular";
+  src: url("../assets/font/Cabin/Cabin-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Cabin";
-  src: url("../assets/font/Cabin/Cabin-semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Cabinsemibold";
+  src: url("../assets/font/Cabin/Cabin-semibold.ttf");
 }
 
 @font-face {
-  font-family: "Cabin";
-  src: url("../assets/font/Cabin/Cabin-bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Cabinbold";
+  src: url("../assets/font/Cabin/Cabin-bold.ttf");
 }
 
 /* Lato */
 @font-face {
-  font-family: "Lato";
-  src: url("../assets/font/Lato/Lato-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Latoregular";
+  src: url("../assets/font/Lato/Lato-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Lato";
-  src: url("../assets/font/Lato/Lato-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Latobold";
+  src: url("../assets/font/Lato/Lato-Bold.ttf");
 }
