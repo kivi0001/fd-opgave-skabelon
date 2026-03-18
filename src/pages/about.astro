@@ -8,6 +8,8 @@ import HeaderH1 from "@components/YellowHeader.astro";
 import Indehold from "@components/About.astro";
 import Features from "@components/Features.astro";
 import AboutTeam from "@components/AboutTeam.astro";
+import Faq from "@components/faq.astro";
+
 // const D = employees.slice(0, 2);
 ---
 
@@ -17,8 +19,9 @@ import AboutTeam from "@components/AboutTeam.astro";
   <!-- <Contact /> -->
   <HeaderH1 />
   <Indehold />
-  <Features />
+  <Features theme="light" />
   <AboutTeam />
-
+  <!-- <Accordion /> -->
+  <Faq />
   <Footer />
 </Layout>
