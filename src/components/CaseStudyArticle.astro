@@ -2,28 +2,35 @@
 //@ts-nocheck
 import DynamicImage from "@components/helpers/DynamicImage.astro";
 import caseStudy from "@data/caseStudy.json";
+import Button from "@components/Buttons.astro";
 const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <article>
   <header>
-    <DynamicImage imagePath={image} altText={caseName} />
-    <div class="case-details">
-      <dl>
-        <div>
+    <div class="header-container">
+      <div class="headerimg">
+        <DynamicImage imagePath={image} altText={caseName} />
+      </div>
+      <dl class="case-details">
+        <div class="casename-details">
           <dt>Case Name</dt>
           <dd>{caseName}</dd>
         </div>
-        <div>
+        <div class="category-details">
           <dt>Category</dt>
           <dd class="category">{category}</dd>
         </div>
-        <div>
+        <div class="date-details">
           <dt>Date</dt>
           <dd class="date">{date}</dd>
         </div>
+        <div class="button">
+          <Button theme="yellow">
+            {buttonLabel}
+          </Button>
+        </div>
       </dl>
-      <a href="#0" class="button">{buttonLabel}</a>
     </div>
   </header>
   {
@@ -64,4 +71,117 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
   }
 </article>
 
-<style></style>
+<style>
+  @layer components {
+    article {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: full / -1;
+      text-wrap: pretty;
+    }
+
+    header {
+      grid-column: content;
+    }
+
+    .header-container {
+      .headerimg img {
+        border-radius: var(--border-s);
+        position: relative;
+        top: 40px;
+        z-index: 0;
+      }
+      .case-details {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: center;
+        background-color: var(--color-ui-primary);
+        color: var(--color-on-ui-primary);
+        padding: var(--section-spacing-l);
+        border-radius: var(--border-m);
+        margin-inline: 2rlh;
+        position: relative;
+        z-index: 1;
+
+        dt {
+          font-weight: bold;
+        }
+
+        .casename-details {
+          grid-column: 1;
+          font-size: var(--step-0);
+        }
+
+        .category-details {
+          grid-column: 2;
+          font-size: var(--step-0);
+        }
+
+        .date-details {
+          grid-column: 3;
+          font-size: var(--step-0);
+        }
+
+        .button {
+          grid-column: 4;
+          place-self: center end;
+        }
+      }
+
+      @media (width < 780px) {
+        .headerimg img {
+          width: 100%;
+          top: 20px;
+        }
+
+        .case-details {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    section {
+      display: grid;
+      grid-column: content;
+      padding-inline: var(--space-3xl);
+      gap: var(--space-xs);
+      > * + * {
+        margin-top: var(--flow-space, 0.5rlh);
+      }
+
+      > * {
+        width: 100%;
+        padding-inline: calc(var(--content-width) / 20);
+        margin-inline: auto;
+      }
+      h2 {
+        font-size: var(--step-3);
+        margin-top: var(--flow-space, 2rlh);
+      }
+      h3 {
+        font-size: var(--step-2);
+        margin-top: var(--flow-space, 1rlh);
+      }
+
+      p {
+        font-size: var(--step--1);
+      }
+
+      ul {
+        font-size: var(--step--1);
+        line-height: var(--space-m-l);
+        padding-left: calc(var(--content-width) / 12);
+        /* padding-inline: calc(var(--content-width) / 20); */
+      }
+
+      img {
+        margin-inline: auto;
+        width: 100%;
+        padding-inline: var(--space-l);
+      }
+    }
+  }
+</style>
