@@ -78,6 +78,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       grid-template-columns: subgrid;
       grid-column: full / -1;
       text-wrap: pretty;
+      padding: var(--section-spacing-l);
     }
 
     header {
@@ -146,7 +147,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
     section {
       display: grid;
       grid-column: content;
-      padding-inline: var(--space-3xl);
+      max-inline-size: 65ch;
       gap: var(--space-xs);
       > * + * {
         margin-top: var(--flow-space, 0.5rlh);
@@ -158,20 +159,13 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
         margin-inline: auto;
       }
       h2 {
-        font-size: var(--step-3);
         margin-top: var(--flow-space, 2rlh);
       }
       h3 {
-        font-size: var(--step-2);
         margin-top: var(--flow-space, 1rlh);
       }
 
-      p {
-        font-size: var(--step--1);
-      }
-
       ul {
-        font-size: var(--step--1);
         line-height: var(--space-m-l);
         padding-left: calc(var(--content-width) / 12);
         /* padding-inline: calc(var(--content-width) / 20); */

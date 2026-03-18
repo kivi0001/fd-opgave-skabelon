@@ -27,8 +27,8 @@ import experience from "@data/experience.json";
 <style>
   @layer components {
   .experience-container {
-      background-color: var(--color-surface-highlight);
-      padding: var(--space-m-l);
+    background-color: var(--color-surface-highlight);
+     padding: var(--section-spacing-l);
 
       .inner-container {
         display: grid;
@@ -39,12 +39,12 @@ import experience from "@data/experience.json";
           flex-direction: column;
           flex-wrap: wrap;
           gap: 1rem;
+          margin-block-end: var(--space-m);
 
           .eyebrow {
             color: var(--color-text);
             text-transform: uppercase;
-            font-size: var(--step--1);
-            letter-spacing: 3px;
+            letter-spacing: 1.5px;
           }
 
           .title {
@@ -67,7 +67,6 @@ import experience from "@data/experience.json";
         flex-direction: row;
         gap: 1rem;
         justify-content: center;
-        padding: var(--space-s);
         font-weight: 600;
       }
 
