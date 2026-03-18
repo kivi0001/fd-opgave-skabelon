@@ -66,20 +66,38 @@ import Checkmark from "@icons/checkmark.svg";
     section {
       margin-top: var(--space-2xl-3xl);
     }
-
     .container {
       display: grid;
-      grid-template-columns: 1fr 450px;
+      grid-template-columns: minmax(300px, 1fr) 1fr; /* responsive first column */
       gap: 2rem;
       align-items: center;
     }
 
     @media (max-width: 868px) {
-      .counter {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 400px;
-        margin: 3rem auto 0;
+      .container {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
+
+      .empoyeesImg {
+        width: 80%; /* smaller than full width */
+        margin: 2rem auto; /* center image */
+      }
+
+      .empoyeesImg img {
+        width: 100%;
+        height: auto;
+      }
+
+      .content {
+        order: 1;
+      }
+    }
+
+    .empoyeesImg img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .content {
@@ -96,7 +114,7 @@ import Checkmark from "@icons/checkmark.svg";
       content: "";
       position: absolute;
       top: -2rem;
-      left: 22rem;
+      right: -2rem;
       background: var(--color-ui-secondary);
       width: 140px;
       height: 140px;
@@ -107,6 +125,7 @@ import Checkmark from "@icons/checkmark.svg";
     h2 {
       font-size: xx-large;
       font-family: var(--font-heading);
+      padding-bottom: var(--space-s);
     }
 
     p:has(+ h2) {
@@ -122,6 +141,18 @@ import Checkmark from "@icons/checkmark.svg";
     }
 
     .ul-Expect li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem; /* distance between icon and text */
+      margin-bottom: 0.8rem; /* optional vertical spacing */
+    }
+
+    .my-icon {
+      flex-shrink: 0; /* keep icon size fixed */
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+    /* .ul-Expect li {
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 0.8rem;
@@ -133,7 +164,7 @@ import Checkmark from "@icons/checkmark.svg";
       grid-template-columns: auto 1fr;
       gap: 1rem;
       font-size: 1rem;
-    }
+    } */
 
     .my-icon {
       width: 1.6rem;
