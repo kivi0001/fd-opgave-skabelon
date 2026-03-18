@@ -1,30 +1,39 @@
 ---
-// import { Image } from "@data/images";
-import DynamicImage from "@helpers/DynamicImage.astro";
-// import CaseStudy from "@data/caseStudy.json";
-import employees from "@data/employees.json";
+import Employee from "./Employee.astro";
+import Buttons from "./Buttons.astro";
 ---
 
 <section>
-  <div>
-    <!-- <h2>{employees.name}</h2>
-    <h2>{employees.title}</h2> -->
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsam
-      consectetur doloribus quidem unde impedit accusamus commodi voluptates, in
-      cumque obcaecati architecto sit dolore et quasi. Provident reiciendis
-      officiis iste.
-    </p>
+  <div class="header-div">
+    <div class="team-text-div">
+      <h2>Meet Our Great Team</h2>
+      <p>
+        Welcome to our amazing team! We are a group of passionate individuals
+        dedicated to excellence and innovation. Each member brings unique skills
+        and experiences, working together to achieve our goals. Join us as we
+        embark on exciting projects and create lasting impacts.
+      </p>
+    </div>
+    <Buttons class="team-button" theme="black">Join our team</Buttons>
   </div>
-
-  {
-    employees.map((employee) => (
-      <DynamicImage
-        imagePath={employee.img}
-        altText={employee.name}
-        width={200}
-        height={200}
-      />
-    ))
-  }
+  <section class="employee-section">
+    <Employee />
+  </section>
 </section>
+
+<style>
+  @layer components {
+    .header-div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(0, var(--content-width)));
+
+      .team-text-div {
+        max-width: calc(var(--content-width) / 2);
+      }
+      a {
+        align-self: end;
+        justify-self: end;
+      }
+    }
+  }
+</style>

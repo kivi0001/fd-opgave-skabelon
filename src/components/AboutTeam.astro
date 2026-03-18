@@ -1,0 +1,82 @@
+---
+import employees from "@data/employees.json";
+import DynamicImage from "@components/helpers/DynamicImage.astro";
+
+const firstTwoEmployees = employees.slice(0, 2); // only first two
+---
+
+<section>
+  <div class="container">
+    <div>
+      <p>Our team</p>
+      <h2>We champion the bold</h2>
+      <p>
+        Our success stems from the synergy between dedicated teams and our
+        valued clients. We prioritize a company culture that fosters exceptional
+        productivity, ensures customer satisfaction.
+      </p>
+      <!-- button -->
+    </div>
+    <div class="employee-cards">
+      {
+        firstTwoEmployees.map((employee) => (
+          <div class="employee-card">
+            <div class="img-and-title">
+              <DynamicImage
+                imagePath={employee.img}
+                altText={employee.name}
+                class="image-card"
+              />
+              <p>{employee.title}</p>
+            </div>
+
+            <h3 class="name">
+              <a class="link-name" href={`/employee/${employee.slug}`}>
+                {employee.name}
+              </a>
+            </h3>
+
+            <p class="description">{employee.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 1fr;
+    grid-auto-rows: auto;
+    gap: var(--element-spacing);
+    margin: 0;
+    justify-content: center;
+  }
+  .employee-card {
+    display: grid;
+    grid-template-columns: [text-start] 1fr [text-end];
+    grid-template-rows: 4fr [text-start] 1fr [text-end];
+
+    img {
+      width: 50%;
+      border-radius: var(--border-image);
+    }
+
+    p {
+      grid-area: text;
+
+      margin-block: trim;
+      padding-inline: var(--space-xs);
+      padding-top: var(--space-2xs);
+    }
+    h3 a {
+      &::after {
+        content: "";
+        position: absolute;
+
+        inset: 0;
+      }
+    }
+  }
+</style>
