@@ -12,8 +12,11 @@ import DynamicImage from "@helpers/DynamicImage.astro";
   @layer components {
     .services {
       display: grid;
-      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1rem;
+
+      @container (width < 800px) {
+      }
     }
   }
 </style>
