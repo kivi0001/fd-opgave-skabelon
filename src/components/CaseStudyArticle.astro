@@ -78,6 +78,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       grid-template-columns: subgrid;
       grid-column: full / -1;
       text-wrap: pretty;
+      padding: var(--section-spacing-l);
     }
 
     header {
@@ -146,7 +147,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
     section {
       display: grid;
       grid-column: content;
-      padding-inline: var(--space-3xl);
+      max-inline-size: 65ch;
       gap: var(--space-xs);
       > * + * {
         margin-top: var(--flow-space, 0.5rlh);
