@@ -1,0 +1,120 @@
+---
+import employees from "@data/employees.json";
+import DynamicImage from "@components/helpers/DynamicImage.astro";
+import DynamicIcon from "@components/helpers/DynamicIcon.astro";
+---
+
+<div class="employee-cards">
+  {
+    employees.map((id) => (
+      <div class="employee-card">
+        <div class="img-and-title">
+          <DynamicImage
+            imagePath={id.img}
+            altText={id.name}
+            class="image-card"
+          />
+          <p>{id.title}</p>
+        </div>
+        <h3 class="name">
+          <a class="link-name" href={`/employee/${id.slug}`}>
+            {id.name}
+          </a>
+        </h3>
+        <p class="description">{id.description}</p>
+
+        <div class="socials">
+          {id.social_links.map((link) => (
+            <a href={link.url}>
+              <DynamicIcon
+                class="icons"
+                width={20}
+                height={20}
+                name={link.icon}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  @layer components {
+    .employee-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+      grid-auto-rows: auto;
+      gap: var(--element-spacing);
+      margin: 0;
+      justify-content: center;
+    }
+
+    .employee-card {
+      padding: var(--card-padding-new);
+      text-align: center;
+      position: relative;
+
+      > div {
+        position: inherit;
+
+        .icons {
+          position: relative;
+          z-index: 1;
+          &:hover {
+            color: var(--color-action);
+          }
+        }
+      }
+
+      h3 a {
+        &::after {
+          content: "";
+          position: absolute;
+          /*
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    */
+          inset: 0;
+        }
+      }
+
+      .img-and-title {
+        display: grid;
+        grid-template-columns: [text-start] 1fr [text-end];
+        grid-template-rows: 4fr [text-start] 1fr [text-end];
+
+        img {
+          grid-row: 1 / 3;
+          grid-column: 1 / 3;
+          border-radius: var(--border-image);
+        }
+
+        p {
+          grid-area: text;
+          text-align: end;
+          margin-block: trim;
+          padding-inline: var(--space-xs);
+          padding-top: var(--space-2xs);
+          margin: 0 var(--space-2xs) var(--space-2xs) auto;
+          background-color: var(--color-ui-primary);
+          color: var(--color-on-ui-primary);
+          border-radius: var(--border-round);
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: space-evenly;
+        padding-inline: var(--space-xl);
+
+        .icons {
+          color: black;
+        }
+      }
+    }
+  }
+</style>
