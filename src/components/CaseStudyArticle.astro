@@ -154,7 +154,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
       > * {
         width: 100%;
-        max-width: 900px;
+        padding-inline: calc(var(--content-width) / 20);
         margin-inline: auto;
       }
       h2 {
@@ -172,15 +172,15 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
       ul {
         font-size: var(--step--1);
-        line-height: 1.5rlh;
+        line-height: var(--space-m-l);
+        padding-left: calc(var(--content-width) / 12);
+        /* padding-inline: calc(var(--content-width) / 20); */
       }
 
       img {
         margin-inline: auto;
         width: 100%;
-        max-width: 700px;
-        display: block;
-        object-fit: cover;
+        padding-inline: var(--space-l);
       }
     }
   }
