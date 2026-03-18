@@ -12,7 +12,6 @@ import Pin from "@icons/pin.svg";
 
 <section>
   <div class="container">
-
     <div class="content">
       <p>Process</p>
       <h2>Contact Us. It’s Easy.</h2>
@@ -24,24 +23,21 @@ import Pin from "@icons/pin.svg";
       </p>
 
       <ul class="ul-Expect">
-   
         <li>
-
-            <div class="phone">
-          <Phone class="my-icon " />
+          <div class="phone">
+            <Phone class="my-icon" />
           </div>
-         <div>
+          <div>
             <p>Call Today</p>
             <p class="p-color">+1 800 100 900</p>
           </div>
         </li>
 
         <li>
-            <div class="clock">
-         
-          <Clock  class="my-icon " />
+          <div class="clock">
+            <Clock class="my-icon" />
           </div>
-          
+
           <div>
             <p>Monday To Friday</p>
             <p class="p-color">9AM - 5PM</p>
@@ -49,17 +45,15 @@ import Pin from "@icons/pin.svg";
         </li>
 
         <li>
-            <div class="pin">
-          <Pin  class="my-icon " />
+          <div class="pin">
+            <Pin class="my-icon" />
           </div>
           <div>
             <p>USA Office</p>
-            <p
-            class="p-color">195 Devonshire St Boston, MA 02110</p>
+            <p class="p-color">195 Devonshire St Boston, MA 02110</p>
           </div>
         </li>
       </ul>
-     
     </div>
 
     <div class="empoyeesImg">
@@ -72,18 +66,16 @@ import Pin from "@icons/pin.svg";
       <Image src={contact} alt="CEO" class="img-bottom" />
     </div>
   </div>
-  </div>
 </section>
 
 <style>
   @layer components {
     .container {
-     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    align-items: stretch;
-    margin-top: 4rem;
-  }
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: stretch;
+      margin-top: 4rem;
     }
 
     .content {
@@ -147,7 +139,7 @@ import Pin from "@icons/pin.svg";
     h2 {
       font-size: xx-large;
       font-family: var(--font-heading);
-       line-height: var(--space-2xl);
+      line-height: var(--space-2xl);
     }
 
     p:has(+ h2) {
@@ -155,8 +147,8 @@ import Pin from "@icons/pin.svg";
       line-height: var(--space-xl);
     }
 
-   .p-color {
-        color: var(--color-text);
+    .p-color {
+      color: var(--color-text);
     }
 
     /* CONTACT LIST */
@@ -174,46 +166,42 @@ import Pin from "@icons/pin.svg";
       gap: 1rem;
       align-items: start;
     }
- li:has(+p ) {
+    li:has(+ p) {
       color: var(--color-text);
     }
     /* ICONS */
 
-
     .my-icon svg {
       width: 100%;
       height: 100%;
-
     }
 
-    .ul-Expect li > div:first-child 
-
-{  border-radius: 33px;
-  height: 50px;
-  width: 50px;
-  display: grid;
-  place-items: center;}
-  
+    .ul-Expect li > div:first-child {
+      border-radius: 33px;
+      height: 50px;
+      width: 50px;
+      display: grid;
+      place-items: center;
+    }
 
     .phone {
       /* border: 5px solid #ffecbb;*/
-      background: #ffecbb; 
-      color: #DEAA27;
-    
+      background: #ffecbb;
+      color: #deaa27;
     }
 
     .clock {
       /* border: 5px solid #a4eda4;
       
       border-radius: 1rem; */
-      color:#4EAF4E;
+      color: #4eaf4e;
       background: #a4eda4;
     }
 
     .pin {
-        color: #030712;
+      color: #030712;
 
-      background: #eaeaea; 
+      background: #eaeaea;
     }
 
     /* MOBILE */
