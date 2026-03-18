@@ -10,7 +10,6 @@ import Buttons from "@components/Buttons.astro";
   <div class="hero-content">
     <div>
       <h1 class="yellow-h1">Empowering Your Business Growth</h1>
-
       <p>
         Discover tailored strategies and expert insights to take your business
         to the next level. Let us help you navigate challenges and achieve
@@ -56,13 +55,13 @@ import Buttons from "@components/Buttons.astro";
       > div {
         padding-block: 4rem 2rem;
         padding-right: var(--space-3xl);
-        grid-column: content;
-        display: grid;
+        grid-column: content-start / middle;
+        /*      display: grid;
         grid-template-columns: subgrid;
 
         > * + * {
           grid-column: content;
-        }
+        } */
       }
 
       background:
