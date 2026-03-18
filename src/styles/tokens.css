@@ -94,10 +94,26 @@
 
   /* ==== Padding og Gaps ==== */
 
-  --card-padding: 2.75rem 2.1875rem;
-  --card-gap: 1rem;
+  /* TOKENS */
+
+  --section-spacing-s: var(--space-xs);
+  --section-spacing-m: var(--space-m);
+  --section-spacing-l: var(--space-xl);
+
+  --section-padding-s: var(--space-xs);
+  --section-padding-m: var(--space-m);
+  --section-padding-l: var(--space-xl);
+
+  --element-spacing: var(--space-l);
+  --card-padding-new: var(--space-m);
+  --card-gap-new: var(--space-xs);
+
   --button-padding: clamp(0.6rem, calc(0.1rem + 1.667vw), 0.8rem)
     clamp(0.5rem, calc(0rem + 2.5vw), 2rem);
+
+  /* EARLY VERSIONS */
+  --card-padding: 2.75rem 2.1875rem;
+  --card-gap: 1rem;
 
   /* === font === */
   --font-body: "Lato", sans-serif;
@@ -145,5 +161,4 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-
 }
