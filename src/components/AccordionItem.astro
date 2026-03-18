@@ -1,0 +1,136 @@
+---
+import PlusIcon from "../icons/plus.svg";
+
+const { id, question, answer, linkBlock, exclusive } = Astro.props;
+---
+
+<details id={id} {...exclusive ? { name: "faq" } : {}}>
+  <summary>
+    <span>
+      {question}
+      <PlusIcon />
+    </span>
+  </summary>
+
+  <div class="answer">
+    <div class="answer">
+      <!-- {answer.split("\n\n").map((text) => <p>{text}</p>)} -->
+    </div>
+
+    {
+      linkBlock && (
+        <a class="link-block" href={linkBlock.url} target="_blank">
+          {linkBlock.label}
+        </a>
+      )
+    }
+  </div>
+</details>
+
+<style>
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  details {
+    color: hsl(190 30% 12%);
+    border-bottom: 1px solid #dadada;
+    inline-size: 65ch;
+
+    summary {
+      font-weight: 700;
+      color: #181818;
+      text-wrap: revert;
+      user-select: none;
+      cursor: pointer;
+
+      &::marker,
+      &::-webkit-details-marker {
+        content: "";
+        display: none;
+      }
+
+      span {
+        border: none;
+        text-align: start;
+        padding: 0;
+        inline-size: 100%;
+        padding-block: 1rlh;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+        svg {
+          inline-size: auto;
+          height: 1lh;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .answer {
+      color: #595566;
+
+      > * + * {
+        margin-top: 1em;
+      }
+
+      :last-child {
+        padding-block-end: 1rlh;
+      }
+
+      .link-block {
+        display: block;
+      }
+    }
+
+    &::details-content {
+      opacity: 0;
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        height 0.5s ease,
+        content-visibility 0.5s ease allow-discrete,
+        opacity 1s,
+        block-size 1s;
+      height: 0;
+
+      /* transition:
+        content-visibility 1s allow-discrete,
+        opacity 1s,
+        block-size 1s; */
+
+      /*  transition:
+        height 0.5s ease,
+        content-visibility 0.5s ease allow-discrete;
+      height: 0;
+      overflow: clip; */
+    }
+
+    /* @supports (interpolate-size: allow-keywords) {
+      :root {
+        interpolate-size: allow-keywords;
+      }
+
+      [open]::details-content {
+        height: auto;
+      }
+    } */
+
+    &[open]::details-content {
+      opacity: 1;
+      block-size: auto;
+      height: 150px;
+    }
+  }
+
+  /* @media (prefers-reduced-motion: no-preference) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+  } */
+
+  details[open] {
+    --r: z 90deg;
+  }
+</style>

@@ -1,13 +1,14 @@
 ---
 import employees from "@data/employees.json";
 import DynamicImage from "@components/helpers/DynamicImage.astro";
+import Buttons from "./Buttons.astro";
 
 const firstTwoEmployees = employees.slice(0, 2); // only first two
 ---
 
 <section>
   <div class="container">
-    <div>
+    <div class="text">
       <p>Our team</p>
       <h2>We champion the bold</h2>
       <p>
@@ -15,28 +16,26 @@ const firstTwoEmployees = employees.slice(0, 2); // only first two
         valued clients. We prioritize a company culture that fosters exceptional
         productivity, ensures customer satisfaction.
       </p>
-      <!-- button -->
+
+      <Buttons class="team-button" theme="black">Meet the Team</Buttons>
     </div>
     <div class="employee-cards">
       {
         firstTwoEmployees.map((employee) => (
           <div class="employee-card">
-            <div class="img-and-title">
-              <DynamicImage
-                imagePath={employee.img}
-                altText={employee.name}
-                class="image-card"
-              />
+            <DynamicImage
+              imagePath={employee.img}
+              altText={employee.name}
+              class="image-card"
+            />
+
+            <div>
               <p>{employee.title}</p>
+
+              <h2 class="name">{employee.name}</h2>
+
+              <p class="description">{employee.description}</p>
             </div>
-
-            <h3 class="name">
-              <a class="link-name" href={`/employee/${employee.slug}`}>
-                {employee.name}
-              </a>
-            </h3>
-
-            <p class="description">{employee.description}</p>
           </div>
         ))
       }
@@ -45,6 +44,81 @@ const firstTwoEmployees = employees.slice(0, 2); // only first two
 </section>
 
 <style>
+  @layer components {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-auto-rows: auto;
+      gap: var(--element-spacing);
+      margin: 0;
+      justify-content: center;
+      margin-bottom: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .employee-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem; /* Juster afstand mellem de to ansatte */
+    }
+
+    .employee-card {
+      display: grid;
+      grid-template-columns: 180px 1fr; /* Fast bredde til billede, resten til tekst */
+      gap: var(--space-md);
+      align-items: start;
+      img {
+        border-radius: var(--border-image);
+      }
+    }
+
+    /* img {
+      width: 100%; 
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: var(--border-image);
+    } */
+
+    p:has(+ h2) {
+      color: var(--color-text);
+      line-height: var(--space-xl);
+      margin-block-start: calc(0.5cap - 0.2lh);
+    }
+    h2 {
+      font-size: var(--space-l);
+    }
+
+    /* Styling af tekst-indhold */
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-left: var(--space-m);
+    }
+
+    .name {
+      order: -1; /* Flytter navnet øverst */
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-right: var(--space-3xl);
+    }
+    .team-button {
+      margin-top: var(--space-m);
+    }
+
+    @media (width < 800px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+</style>
+<!-- <style>
   .container {
     display: grid;
     grid-template-columns: minmax(300px, 1fr) 1fr;
@@ -79,4 +153,4 @@ const firstTwoEmployees = employees.slice(0, 2); // only first two
       }
     }
   }
-</style>
+</style> -->
