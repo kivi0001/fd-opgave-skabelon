@@ -1,0 +1,30 @@
+---
+// import { Image } from "@data/images";
+import DynamicImage from "@helpers/DynamicImage.astro";
+// import CaseStudy from "@data/caseStudy.json";
+import employees from "@data/employees.json";
+---
+
+<section>
+  <div>
+    <!-- <h2>{employees.name}</h2>
+    <h2>{employees.title}</h2> -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsam
+      consectetur doloribus quidem unde impedit accusamus commodi voluptates, in
+      cumque obcaecati architecto sit dolore et quasi. Provident reiciendis
+      officiis iste.
+    </p>
+  </div>
+
+  {
+    employees.map((employee) => (
+      <DynamicImage
+        imagePath={employee.img}
+        altText={employee.name}
+        width={200}
+        height={200}
+      />
+    ))
+  }
+</section>

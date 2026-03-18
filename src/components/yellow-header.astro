@@ -1,0 +1,88 @@
+<section>
+  <div class="container">
+    <div class="container-header">
+      <div class="h1-yellow">
+        <p>About</p>
+        <h1>Igniting Innovation</h1>
+      </div>
+
+      <p class="text-yellow">
+        Our strength lies in the collaboration between our talented teams and
+        esteemed clients. We cultivate a workplace that champions innovation,
+        promotes peak performance, and guarantees client satisfaction.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    section {
+      overflow-x: clip;
+      position: relative;
+      margin-top: var(--space-2xl-3xl);
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
+      padding-bottom: var(--space-2xl-3xl);
+    }
+
+    /*  Din container styrer bredden ét sted */
+    .container {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: var(--space-l);
+
+      anchor-name: --container;
+    }
+
+    .container-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+      align-items: center;
+      text-align: center;
+    }
+
+    .h1-yellow {
+      display: grid;
+      gap: 0.5rem;
+      justify-items: center;
+    }
+
+    .text-yellow {
+      max-width: 60ch;
+      text-align: center;
+    }
+
+    p {
+      font-family: var(--font-body);
+    }
+
+    p:has(+ h1) {
+      display: grid;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: xx-large;
+      font-family: var(--font-heading);
+      position: relative;
+      text-decoration: underline 4px var(--color-surface-highlight);
+
+      anchor-name: --title;
+    }
+
+    /* Anchor Positioning (uden magic numbers) */
+    .h1-yellow h1::after {
+      content: "";
+      position: absolute;
+
+      inset-block-start: anchor(--title bottom);
+      inset-inline-start: anchor(--title left);
+
+      width: 45rem;
+      height: 4px;
+      top: 31px;
+      background: var(--color-surface-highlight);
+    }
+  }
+</style>

@@ -1,0 +1,167 @@
+---
+import { Image } from "astro:assets";
+
+import Vision from "@assets/images/about-vision.png";
+import Checkmark from "@icons/checkmark.svg";
+---
+
+<section>
+  <div class="container">
+    <div class="empoyeesImg">
+      <Image src={Vision} alt="CEO" />
+    </div>
+
+    <div class="content">
+      <p>OUR VISION</p>
+      <h2>Turn your ideas into reality.</h2>
+
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+
+      <ul class="ul-Expect">
+        <li>
+          <Checkmark width={32} height={32} color="green" class="my-icon" />
+          Bring to the table win-win survival strategies to ensure proactive domination.
+          At the end of the day.
+        </li>
+
+        <li>
+          <Checkmark width={32} height={32} color="green" class="my-icon" />
+          Capitalize on low hanging fruit to identify a ballpark value added activity
+          to beta test override the digital.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Move counter outside the main grid -->
+  <div class="counter">
+    <div>
+      <h3>1128+</h3>
+      <p>Successful Work</p>
+    </div>
+
+    <div>
+      <h3>908+</h3>
+      <p>Team member</p>
+    </div>
+
+    <div>
+      <h3>258+</h3>
+      <p>Happy Customers</p>
+    </div>
+
+    <div>
+      <h3>564+</h3>
+      <p>Creative Idea</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    section {
+      margin-top: var(--space-2xl-3xl);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 450px;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 868px) {
+      .counter {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+        margin: 3rem auto 0;
+      }
+    }
+
+    .content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .empoyeesImg {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .empoyeesImg::before {
+      content: "";
+      position: absolute;
+      top: -2rem;
+      left: 22rem;
+      background: var(--color-ui-secondary);
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+
+    h2 {
+      font-size: xx-large;
+      font-family: var(--font-heading);
+    }
+
+    p:has(+ h2) {
+      color: var(--color-text);
+      line-height: var(--space-xl);
+      margin-block-start: calc(0.5cap - 0.2lh);
+    }
+
+    .ul-Expect {
+      display: grid;
+      gap: 1rem;
+      padding: 0;
+    }
+
+    .ul-Expect li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      font-size: 1rem;
+    }
+
+    .my-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    /* Counter styles */
+    .counter {
+      display: flex;
+      justify-content: center; /* center horizontally */
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    /* .counter div {
+      text-align: center;
+    } */
+
+    h3 {
+      font-size: var(--step-3);
+      margin: 0;
+    }
+
+    .counter p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+    }
+  }
+</style>
