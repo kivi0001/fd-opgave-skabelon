@@ -2,6 +2,7 @@
 @layer global {
   :root {
     --content-width: 1200px;
+    --half: minmax(0, calc(var(--content-width) / 2));
   }
 
   body {
@@ -11,9 +12,11 @@
   main {
     display: grid;
     grid-template-columns:
-      [full-start] 1fr [content-start] minmax(0, var(--content-width))
-      [content-end]
-      1fr [full-end];
+      [full-start] minmax(1rem, 1fr)
+      [content-start] var(--half)
+      [middle]
+      var(--half) [content-end]
+      minmax(1rem, 1fr) [full-end];
   }
 
   section,
