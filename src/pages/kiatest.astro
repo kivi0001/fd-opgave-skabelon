@@ -1,11 +1,8 @@
 ---
+import Team from "@components/Team.astro";
 import Layout from "@layouts/Layout.astro";
-
-import FinancialTools from "@components/FinancialTools.astro";
-
-import financialProjections from "../data/financialProjections.json";
 ---
 
 <Layout>
-  <FinancialTools financialProjections={financialProjections} />
+  <Team />
 </Layout>
