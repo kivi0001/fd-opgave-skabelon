@@ -18,13 +18,15 @@ const { employee } = Astro.props;
   <section>
     <div class="employee-info-div">
       <div class="img-and-socials">
-        <Image
-          src={employee.img}
-          alt={employee.name}
-          width={300}
-          height={300}
-          class="image-portrait"
-        />
+        <div class="employee-img">
+          <Image
+            src={employee.img}
+            alt={employee.name}
+            width={400}
+            height={500}
+            class="image-portrait"
+          />
+        </div>
         <div class="socials">
           {
             employee.social_links.map((link) => (
@@ -53,14 +55,51 @@ const { employee } = Astro.props;
 
 <style>
   @layer components {
+    :root {
+      --image-width: 100%;
+    }
+
+    section {
+      margin-block: var(--space-3xl);
+    }
+
     .employee-info-div {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(0, calc(var(--content-width) / 2))
-      );
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: var(--section-padding-l);
+    }
+
+    .img-and-socials {
+      justify-self: center;
+
+      .employee-img {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .employee-img::before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        left: -2rem;
+        background: var(--color-ui-secondary);
+        width: calc(var(--image-width) / 2);
+        height: 140px;
+        border-radius: 20px;
+        z-index: -1;
+      }
+
+      img {
+        border-radius: var(--border-image);
+        margin-bottom: var(--space-xs);
+      }
     }
     .socials {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      padding-inline: var(--space-xl);
       .icons {
         color: black;
 
