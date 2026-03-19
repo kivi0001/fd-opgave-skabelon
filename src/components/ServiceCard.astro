@@ -15,20 +15,27 @@ import ArrowRight from "@icons/arrow--right.svg";
       background: var(--color-blue-700-transparent);
       padding: var(--card-padding);
       border-radius: var(--border-s);
+      display: grid;
+      grid-auto-rows: repeat(3, 1fr);
+      align-items: center;
 
       h2 {
         font-size: var(--h3-size);
         font-family: var(--h3-font);
+        grid-row: 1;
       }
 
       p {
         font-size: var(--p-size);
         font-family: var(--p-font);
+        grid-row: 2;
       }
 
       a {
         font-size: var(--a-size);
         font-family: var(--a-font);
+        grid-row: 3;
+        align-self: center;
       }
 
       h2,
