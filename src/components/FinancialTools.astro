@@ -48,6 +48,7 @@ import ArrowLeft from "@icons/arrow-left.svg";
         container-type: inline-size;
         display: flex;
         justify-content: space-between;
+        margin-block: var(--space-m);
       }
 
       .header {
@@ -55,6 +56,18 @@ import ArrowLeft from "@icons/arrow-left.svg";
 
         .financial-text-div {
           max-width: 600px;
+          margin-block:;
+
+          h3 {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: var(--p-size);
+            font-family: var(--lato-regular);
+          }
+
+          h2 {
+            margin-block: var(--space-s);
+          }
         }
 
         .arrows {
@@ -66,6 +79,11 @@ import ArrowLeft from "@icons/arrow-left.svg";
             background: var(--color-ui-primary);
             padding: var(--space-xs);
             border-radius: var(--border-round);
+          }
+          :hover {
+            cursor: pointer;
+            background: var(--color-action);
+            color: black;
           }
         }
         @container (width < 680px) {
