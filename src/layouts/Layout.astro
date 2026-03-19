@@ -1,5 +1,7 @@
 ---
 import "@styles/main.css";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <html lang="en">
@@ -14,11 +16,11 @@ import "@styles/main.css";
     </style>
   </head>
   <body>
-    <!-- <header></header> -->
+    <Header />
     <main>
       <slot />
     </main>
-    <!-- <footer></footer> -->
+    <Footer />
   </body>
 </html>
 

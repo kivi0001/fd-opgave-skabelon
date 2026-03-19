@@ -9,7 +9,9 @@
     margin-inline: auto;
   }
 
-  main {
+  main,
+  header,
+  footer {
     display: grid;
     grid-template-columns:
       [full-start] minmax(1rem, 1fr)
@@ -19,9 +21,7 @@
       minmax(1rem, 1fr) [full-end];
   }
 
-  section,
-  header,
-  footer {
+  section {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: full-start / -1;
