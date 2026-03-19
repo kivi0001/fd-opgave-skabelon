@@ -116,11 +116,11 @@
   --card-gap: 1rem;
 
   /* === font primitives === */
-  --cabin-regular: "Cabinregular";
-  --cabin-semibold: "Cabinsemibold";
-  --cabin-bold: "Cabinbold";
-  --lato-regular: "Latoregular";
-  --lato-bold: "Latobold";
+  --cabin-regular: "Cabin";
+  --cabin-semibold: "Cabin";
+  --cabin-bold: "Cabin";
+  --lato-regular: "Lato";
+  --lato-bold: "Lato";
 
   /* === font tokens === */
   --h1-size: var(--step-4);
@@ -142,31 +142,3 @@
   --a-font: var(--lato-regular);
 }
 
-/* === font === */
-
-/* Cabin */
-@font-face {
-  font-family: "Cabinregular";
-  src: url("/assets/font/Cabin/Cabin-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Cabinsemibold";
-  src: url("/assets/font/Cabin/Cabin-semibold.ttf");
-}
-
-@font-face {
-  font-family: "Cabinbold";
-  src: url("/assets/font/Cabin/Cabin-bold.ttf");
-}
-
-/* Lato */
-@font-face {
-  font-family: "Latoregular";
-  src: url("/assets/font/Lato/Lato-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Latobold";
-  src: url("/assets/font/Lato/Lato-Bold.ttf");
-}
