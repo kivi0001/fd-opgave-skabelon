@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 
 // import Contact from "@components/Contact.astro";
 import YellowHeader from "@components/YellowHeader.astro";
-import Indehold from "@components/About.astro";
+import AboutUs from "@components/About.astro";
 import Features from "@components/Features.astro";
 import AboutTeam from "@components/AboutTeam.astro";
 import Faq from "@components/faq.astro";
@@ -12,8 +12,12 @@ import Faq from "@components/faq.astro";
 ---
 
 <Layout>
-  <YellowHeader />
-  <Indehold />
+  <YellowHeader
+    title="About"
+    headline="Igniting Innovation"
+    text="Our strength lies in the collaboration between our talented teams and esteemed clients. We cultivate a workplace that champions innovation, promotes peak performance, and guarantees client satisfaction."
+  />
+  <AboutUs />
   <Features theme="light" />
   <AboutTeam />
   <Faq />
