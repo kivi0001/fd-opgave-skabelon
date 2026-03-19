@@ -64,13 +64,14 @@ import Checkmark from "@icons/checkmark.svg";
 <style>
   @layer components {
     section {
-      margin-top: var(--space-2xl-3xl);
+      padding: var(--section-spacing-l);
     }
     .container {
       display: grid;
       grid-template-columns: minmax(300px, 1fr) 1fr; /* responsive first column */
       gap: 2rem;
       align-items: center;
+      padding: var(--section-padding-m);
     }
 
     @media (max-width: 868px) {
@@ -152,19 +153,6 @@ import Checkmark from "@icons/checkmark.svg";
       width: 1.6rem;
       height: 1.6rem;
     }
-    /* .ul-Expect li {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.8rem;
-      align-items: start;
-    }
-
-    li {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1rem;
-      font-size: 1rem;
-    } */
 
     .my-icon {
       width: 1.6rem;
@@ -176,13 +164,9 @@ import Checkmark from "@icons/checkmark.svg";
       display: flex;
       justify-content: center; /* center horizontally */
       gap: 2rem;
-      margin-top: 3rem;
+      padding: var(--section-padding-l);
       flex-wrap: wrap;
     }
-
-    /* .counter div {
-      text-align: center;
-    } */
 
     h3 {
       font-size: var(--step-3);

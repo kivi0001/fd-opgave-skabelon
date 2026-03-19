@@ -16,19 +16,18 @@ const firstTwoEmployees = employees.slice(0, 2);
         valued clients. We prioritize a company culture that fosters exceptional
         productivity, ensures customer satisfaction.
       </p>
-
-      <Buttons class="team-button" theme="black">Meet the Team</Buttons>
+      <Buttons href="/team" class="team-button" theme="black"
+        >Meet the Team</Buttons
+      >
     </div>
 
     <div class="employee-cards">
       {
         firstTwoEmployees.map((employee) => (
           <div class="employee-card">
-            <DynamicImage
-              imagePath={employee.img}
-              altText={employee.name}
-              class="employee-image"
-            />
+            <div class="employee-image">
+              <DynamicImage imagePath={employee.img} altText={employee.name} />
+            </div>
             <div class="employee-text">
               <h3 class="name">{employee.name}</h3>
               <p class="title">{employee.title}</p>
@@ -54,72 +53,79 @@ const firstTwoEmployees = employees.slice(0, 2);
       align-items: start;
     }
 
-    .text p {
-      margin-bottom: var(--space-sm);
+    .text {
+      display: flex;
+      flex-direction: column;
+
+      p,
+      h2 {
+        margin-block-end: var(--space-s);
+      }
     }
 
     .employee-cards {
       display: flex;
       flex-direction: column;
-      gap: var(--space-lg);
-    }
+      gap: var(--space-l);
 
-    .employee-card {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: var(--space-md);
-      align-items: start;
-    }
+      .employee-card {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: var(--space-m);
+        align-items: start;
 
-    .employee-image {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: var(--border-image);
-    }
+        .employee-image img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+          border-radius: var(--border-image);
+        }
+      }
+      .employee-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
 
-    .employee-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
+      .employee-text .name {
+        margin: 0;
+        font-size: 1.5rem;
+      }
 
-    .employee-text .name {
-      margin: 0;
-      font-size: 1.5rem;
-    }
+      .employee-text .title {
+        font-weight: 500;
+        color: var(--color-text);
+      }
 
-    .employee-text .title {
-      font-weight: 500;
-      color: var(--color-text);
-    }
+      .employee-text .description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
 
-    .employee-text .description {
-      font-size: 0.9rem;
-      line-height: 1.5;
+      .team-button {
+        margin-top: var(--space-m);
+      }
     }
-
-    .team-button {
-      margin-top: var(--space-m);
-    }
-
     /* Responsive */
     @media (max-width: 750px) {
       .container {
         grid-template-columns: 1fr;
-      }
-      .employee-card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
+        margin-inline: auto;
       }
       .employee-image {
-        grid-column: 1 / -1;
+        /* grid-column: 1 / -1; */
       }
     }
 
     @media (max-width: 450px) {
       .employee-text {
         text-align: center;
+      }
+      .employee-cards {
+        .employee-card {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }
