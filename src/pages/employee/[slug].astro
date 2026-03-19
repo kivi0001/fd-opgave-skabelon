@@ -4,6 +4,8 @@ import employees from "@data/employees.json";
 import { Image } from "astro:assets";
 import DynamicIcon from "@components/helpers/DynamicIcon.astro";
 
+import Buttons from "@components/Buttons.astro";
+
 export async function getStaticPaths() {
   return employees.map((employee) => ({
     params: { slug: employee.slug },
@@ -16,6 +18,7 @@ const { employee } = Astro.props;
 
 <Layout>
   <section>
+    <Buttons href="/team" class="team-button" theme="outline">back</Buttons>
     <div class="employee-info-div">
       <div class="img-and-socials">
         <div class="employee-img">
