@@ -14,28 +14,33 @@ const { id, question, answer, linkBlock, exclusive } = Astro.props;
 
   <div class="answer">
     <div class="answer">
-      <!-- {answer.split("\n\n").map((text) => <p>{text}</p>)} -->
-    </div>
+      <div class="answer">
+        {answer.split("\n\n").map((text) => <p>{text}</p>)}
+      </div>
 
-    {
-      linkBlock && (
-        <a class="link-block" href={linkBlock.url} target="_blank">
-          {linkBlock.label}
-        </a>
-      )
-    }
+      {
+        linkBlock && (
+          <a class="link-block" href={linkBlock.url} target="_blank">
+            {linkBlock.label}
+          </a>
+        )
+      }
+    </div>
   </div>
 </details>
 
 <style>
-  :root {
-    interpolate-size: allow-keywords;
-  }
-
-  details {
-    color: hsl(190 30% 12%);
-    border-bottom: 1px solid #dadada;
-    inline-size: 65ch;
+  @layer components {
+    details {
+      color: hsl(190 30% 12%);
+      border-bottom: 1px solid #dadada;
+      inline-size: 50ch;
+    }
+    @media (max-width: 580px) {
+      details {
+        inline-size: 30ch;
+      }
+    }
 
     summary {
       font-weight: 700;
@@ -122,15 +127,15 @@ const { id, question, answer, linkBlock, exclusive } = Astro.props;
       block-size: auto;
       height: 150px;
     }
-  }
 
-  /* @media (prefers-reduced-motion: no-preference) {
+    /* @media (prefers-reduced-motion: no-preference) {
     :root {
       interpolate-size: allow-keywords;
     }
   } */
 
-  details[open] {
-    --r: z 90deg;
+    details[open] {
+      --r: z 90deg;
+    }
   }
 </style>
