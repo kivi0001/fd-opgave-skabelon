@@ -94,6 +94,7 @@ import Pin from "@icons/pin.svg";
       grid-template-rows: 1fr 1fr;
       gap: 1rem;
       height: 100%;
+      padding: var(--section-padding-m);
     }
 
     .empoyeesImg img {
@@ -141,25 +142,23 @@ import Pin from "@icons/pin.svg";
     /* TEXT */
 
     h2 {
-      font-size: xx-large;
-      font-family: var(--font-heading);
+      font-size: var(--h2-size);
+      font-family: var(--h2-font);
       line-height: var(--space-2xl);
     }
 
     .title {
+      color: var(--color-text);
+      font-size: var(--p-size);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-    }
-
-    h2 {
-      font-weight: 600;
     }
 
     /* CONTACT LIST */
 
     .ul-Expect {
       display: grid;
-      gap: 3rem;
+      gap: var(--space-l-xl);
       padding: 0;
       margin-top: 3rem;
     }
@@ -189,15 +188,11 @@ import Pin from "@icons/pin.svg";
     }
 
     .phone {
-      /* border: 5px solid #ffecbb;*/
       background: #ffecbb;
       color: #deaa27;
     }
 
     .clock {
-      /* border: 5px solid #a4eda4;
-      
-      border-radius: 1rem; */
       color: #4eaf4e;
       background: #a4eda4;
     }

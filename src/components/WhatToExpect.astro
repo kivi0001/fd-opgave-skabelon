@@ -12,7 +12,7 @@ import Checkmark from "@icons/checkmark.svg";
     </div>
 
     <div class="content">
-      <p>WE'LL WORK WITH YOU</p>
+      <p class="eyebrow">We'll work with you</p>
       <h2>What To Expect</h2>
 
       <p>
@@ -87,9 +87,13 @@ import Checkmark from "@icons/checkmark.svg";
       margin-block-start: var(--space-s);
       margin-block-end: var(--space-s);
     }
-    p:has(+ h2) {
+    .eyebrow {
+      font-family: var(--lato-regular);
       color: var(--color-text);
-      margin-block-start: calc(0.5cap - 0.2lh);
+      font-size: var(--p-size);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      grid-column: 1;
     }
 
     .ul-Expect {
