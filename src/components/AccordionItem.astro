@@ -31,6 +31,12 @@ const { id, question, answer, linkBlock, exclusive } = Astro.props;
 
 <style>
   @layer components {
+    @supports (interpolate-size: allow-keywords) {
+      :root {
+        interpolate-size: allow-keywords;
+      }
+    }
+
     details {
       color: hsl(190 30% 12%);
       border-bottom: 1px solid #dadada;
@@ -99,28 +105,7 @@ const { id, question, answer, linkBlock, exclusive } = Astro.props;
         opacity 1s,
         block-size 1s;
       height: 0;
-
-      /* transition:
-        content-visibility 1s allow-discrete,
-        opacity 1s,
-        block-size 1s; */
-
-      /*  transition:
-        height 0.5s ease,
-        content-visibility 0.5s ease allow-discrete;
-      height: 0;
-      overflow: clip; */
     }
-
-    /* @supports (interpolate-size: allow-keywords) {
-      :root {
-        interpolate-size: allow-keywords;
-      }
-
-      [open]::details-content {
-        height: auto;
-      }
-    } */
 
     &[open]::details-content {
       opacity: 1;
@@ -128,14 +113,22 @@ const { id, question, answer, linkBlock, exclusive } = Astro.props;
       height: 150px;
     }
 
-    /* @media (prefers-reduced-motion: no-preference) {
-    :root {
-      interpolate-size: allow-keywords;
-    }
-  } */
-
     details[open] {
       --r: z 90deg;
     }
   }
+  /*    @supports (interpolate-size: allow-keywords) {
+          :root {
+            interpolate-size: allow-keywords;
+          }
+    
+          [open]::details-content {
+            height: auto;
+          }
+        } */
+
+  /* 
+    @media (prefers-reduced-motion: no-preference) {
+
+    } */
 </style>

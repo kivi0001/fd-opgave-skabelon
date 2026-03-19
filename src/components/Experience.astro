@@ -83,6 +83,15 @@ import experience from "@data/experience.json";
         inherits: true;
       }
 
+      @media (prefers-reduced-motion: reduce) {
+       .stat{
+            &:hover {
+            --animatedNumber: var(--percent) !important;
+          }
+         }
+       
+      }
+      
       .stat {
         --animatedNumber: var(--percent);
         --percentage: calc(var(--animatedNumber) * 1%);
@@ -94,25 +103,25 @@ import experience from "@data/experience.json";
         border: var(--border-width) solid #0000;
         content: "";
         background:
-          radial-gradient(
-              circle at 50% calc(var(--border-width) / 2),
-              white calc(var(--border-width) / 2),
-              #0000 0
-            )
-            border-box,
+        radial-gradient(
+          circle at 50% calc(var(--border-width) / 2),
+          white calc(var(--border-width) / 2),
+          #0000 0
+          )
+          border-box,
           linear-gradient(var(--color-surface-highlight)) padding-box,
           conic-gradient(white var(--percentage), #daae3c 0) border-box;
-        display: grid;
-        container stat / inline-size;
-        transition: --animatedNumber 2s;
-
-        &:hover {
-          --animatedNumber: 100;
-        }
-        
-
-        &::before,
-        &::after {
+          display: grid;
+          container stat / inline-size;
+          transition: --animatedNumber 2s;
+          
+          &:hover {
+            --animatedNumber: 100;
+          }
+          
+          
+          &::before,
+          &::after {
           grid-area: 1 / 1;
         }
 
