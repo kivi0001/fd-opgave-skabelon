@@ -28,11 +28,18 @@ import Buttons from "./Buttons.astro";
     }
 
     .header-div {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(0, var(--content-width)));
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-s);
+      flex-wrap: wrap;
+      padding: var(--space-m);
 
       .team-text-div {
         max-width: calc(var(--content-width) / 2);
+
+        h2 {
+          margin-bottom: var(--space-m);
+        }
       }
       a {
         align-self: end;

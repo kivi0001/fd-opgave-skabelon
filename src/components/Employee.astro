@@ -46,17 +46,31 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
   @layer components {
     .employee-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+      grid-template-columns: repeat(auto-fit, minmax(100px, 370px));
       grid-auto-rows: auto;
       gap: var(--element-spacing);
       margin: 0;
-      justify-content: center;
+      justify-content: space-evenly;
     }
 
     .employee-card {
       padding: var(--card-padding-new);
       text-align: center;
       position: relative;
+      border-radius: var(--border-image);
+
+      &:hover {
+        background: var(--color-neutrals-400);
+        opacity: 90%;
+
+        .description {
+          color: var(--color-neutrals-900);
+        }
+      }
+
+      > * {
+        margin-block: var(--space-s);
+      }
 
       > div {
         position: inherit;
@@ -71,6 +85,9 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
       }
 
       h3 a {
+        font-family: var(--cabin-bold);
+        font-size: var(--h3-size);
+
         &::after {
           content: "";
           position: absolute;
@@ -89,9 +106,6 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
           border-radius: var(--border-image);
         }
 
-        .employee-description {
-          padding-top: var(--space-2xs);
-        }
         p {
           width: fit-content;
           align-content: center;
@@ -110,6 +124,7 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
         display: flex;
         justify-content: space-evenly;
         padding-inline: var(--space-xl);
+        margin-top: var(--space-m);
 
         .icons {
           color: black;
