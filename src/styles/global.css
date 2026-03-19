@@ -6,28 +6,28 @@
 /* Cabin */
 @font-face {
   font-family: "Cabinregular";
-  src: url("./assets/font/Cabin/Cabin-Regular.ttf");
+  src: url("@assets/font/Cabin/Cabin-Regular.ttf");
 }
 
 @font-face {
   font-family: "Cabinsemibold";
-  src: url("./assets/font/Cabin/Cabin-semibold.ttf");
+  src: url("@assets/font/Cabin/Cabin-semibold.ttf");
 }
 
 @font-face {
   font-family: "Cabinbold";
-  src: url("./assets/font/Cabin/Cabin-bold.ttf");
+  src: url("@assets/font/Cabin/Cabin-bold.ttf");
 }
 
 /* Lato */
 @font-face {
   font-family: "Latoregular";
-  src: url("./assets/font/Lato/Lato-Regular.ttf");
+  src: url("@assets/font/Lato/Lato-Regular.ttf");
 }
 
 @font-face {
   font-family: "Latobold";
-  src: url("./assets/font/Lato/Lato-Bold.ttf");
+  src: url("@assets/font/Lato/Lato-Bold.ttf");
 }
 
 
