@@ -6,7 +6,7 @@ const { title, headline, text } = Astro.props;
   <div class="container">
     <div class="container-header">
       <div class="h1-yellow">
-        <p>{title}</p>
+        <p class="eyebrow">{title}</p>
         <h1>{headline}</h1>
       </div>
       <p class="text-yellow">
@@ -15,23 +15,6 @@ const { title, headline, text } = Astro.props;
     </div>
   </div>
 </section>
-
-<!-- <section>
-  <div class="container">
-    <div class="container-header">
-      <div class="h1-yellow">
-        <p>About</p>
-        <h1>Igniting Innovation</h1>
-      </div>
-
-      <p class="text-yellow">
-        Our strength lies in the collaboration between our talented teams and
-        esteemed clients. We cultivate a workplace that champions innovation,
-        promotes peak performance, and guarantees client satisfaction.
-      </p>
-    </div>
-  </div>
-</section> -->
 
 <style>
   @layer components {
@@ -71,6 +54,11 @@ const { title, headline, text } = Astro.props;
       text-align: center;
     }
 
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
     p {
       font-family: var(--font-body);
     }
@@ -82,7 +70,7 @@ const { title, headline, text } = Astro.props;
 
     h1 {
       font-size: xx-large;
-      font-family: var(--font-heading);
+      font-family: var(--h1-font);
       position: relative;
       text-decoration: underline 4px var(--color-surface-highlight);
 

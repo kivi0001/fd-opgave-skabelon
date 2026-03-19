@@ -23,6 +23,10 @@ import Buttons from "./Buttons.astro";
 
 <style>
   @layer components {
+    section {
+      padding: var(--section-padding-m);
+    }
+
     .header-div {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(0, var(--content-width)));
