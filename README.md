@@ -138,8 +138,9 @@ Særligt gennem vores opbygning af layout og responsivitet, indtænker vi defens
 
 ### PROGRESSIVE ENHANCEMENT
 
-Vi har i komponenten AccordionItem.astro indtænkt progressive enhancement, hvor vi forholder os til de browsere som ikke kan læse de keywords, som vi anvender i animationen af details-indholdet, når dette foldes ud.
+Vi har i komponenten AccordionItem.astro indtænkt progressive enhancement, hvor vi forholder os til de browsere som ikke understøtter de keywords, som vi anvender i animationen af details-indholdet, når dette foldes ud (i dette tilfælde på 'height').
 På den måde tager vi et valg om et design af sitet, som ikke er begrænset af dette benspænd - men samtidig sikrer vi en god oplevelse for alle brugere uanset browser, ved at forholde os til oplevelsen af det valgte design i de tilfælde, hvor det ønskede design ikke kan konverteres i den pågældende browser, som brugeren anvender.
+På Experience.astro komponenten har vi anvendt "prefers reduced motion", for at sikre en god brugeroplevelse for dem, som ønsker at fravælge animationer. Samtidig stopper dette os ikke i at anvende animationer - men vi sikrer en god brugeroplevelse for alle.
 
 ### OPBYGNING AF CSS STRUKTUR
 
