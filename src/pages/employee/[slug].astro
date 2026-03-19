@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import employees from "@data/employees.json";
-import { Image } from "astro:assets";
+import DynamicImage from "@components/helpers/DynamicImage.astro";
 import DynamicIcon from "@components/helpers/DynamicIcon.astro";
 
 import Buttons from "@components/Buttons.astro";
@@ -24,9 +24,9 @@ const { employee } = Astro.props;
     <div class="employee-info-div">
       <div class="img-and-socials">
         <div class="employee-img">
-          <Image
-            src={employee.img}
-            alt={employee.name}
+          <DynamicImage
+            imagePath={employee.img}
+            altText={employee.name}
             width={400}
             height={500}
             class="image-portrait"
