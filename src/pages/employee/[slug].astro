@@ -18,7 +18,9 @@ const { employee } = Astro.props;
 
 <Layout>
   <section>
-    <Buttons href="/team" class="team-button" theme="outline">back</Buttons>
+    <div class="button">
+      <Buttons href="/team" class="team-button" theme="outline">back</Buttons>
+    </div>
     <div class="employee-info-div">
       <div class="img-and-socials">
         <div class="employee-img">
@@ -64,6 +66,25 @@ const { employee } = Astro.props;
 
     section {
       margin-block: var(--space-3xl);
+    }
+
+    h3 {
+      color: var(--color-text-muted);
+      font-size: var(--p-size);
+      margin-bottom: var(--space-xs-s);
+    }
+
+    h2:has(+ p) {
+      margin-top: var(--space-s-m);
+      margin-bottom: var(--space-s-m);
+    }
+    p {
+      font-size: var(--p-font);
+    }
+
+    p:has(+ h2) {
+      border-bottom: 1px solid #c1c1c1;
+      padding-bottom: var(--space-m-l);
     }
 
     .employee-info-div {
