@@ -21,7 +21,9 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
             {id.name}
           </a>
         </h3>
-        <p class="description">{id.description}</p>
+        <div class="employee-description">
+          <p class="description">{id.description}</p>
+        </div>
 
         <div class="socials">
           {id.social_links.map((link) => (
@@ -87,12 +89,16 @@ import DynamicIcon from "@components/helpers/DynamicIcon.astro";
           border-radius: var(--border-image);
         }
 
+        .employee-description {
+          padding-top: var(--space-2xs);
+        }
         p {
+          width: fit-content;
+          align-content: center;
           grid-area: text;
           text-align: end;
           margin-block: trim;
-          padding-inline: var(--space-xs);
-          padding-top: var(--space-2xs);
+          padding-inline: var(--space-m);
           margin: 0 var(--space-2xs) var(--space-2xs) auto;
           background-color: var(--color-ui-primary);
           color: var(--color-on-ui-primary);
