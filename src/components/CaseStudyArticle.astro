@@ -7,7 +7,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 ---
 
 <article>
-  <header>
+  <div class="header">
     <div class="header-container">
       <div class="headerimg">
         <DynamicImage imagePath={image} altText={caseName} />
@@ -32,7 +32,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
         </div>
       </dl>
     </div>
-  </header>
+  </div>
   {
     caseStudy.sections.map((section) => (
       <section>
@@ -81,7 +81,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
       padding: var(--section-spacing-l);
     }
 
-    header {
+    .header {
       grid-column: content;
     }
 
@@ -100,7 +100,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
         background-color: var(--color-ui-primary);
         color: var(--color-on-ui-primary);
         padding: var(--section-spacing-l);
-        border-radius: var(--border-m);
+        border-radius: var(--border-case-overview);
         margin-inline: 2rlh;
         position: relative;
         z-index: 1;
@@ -155,7 +155,7 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
       > * {
         width: 100%;
-        padding-inline: calc(var(--content-width) / 20);
+        padding-inline: calc(var(--content-width) / 10);
         margin-inline: auto;
       }
       h2 {
@@ -167,14 +167,34 @@ const { caseName, category, date, image, buttonLabel } = caseStudy.caseDetails;
 
       ul {
         line-height: var(--space-m-l);
-        padding-left: calc(var(--content-width) / 12);
-        /* padding-inline: calc(var(--content-width) / 20); */
+        padding-left: calc(var(--section-spacing-s) * 12);
       }
 
       img {
-        margin-inline: auto;
         width: 100%;
-        padding-inline: var(--space-l);
+        padding-inline: calc(var(--card-padding-new) * 8);
+      }
+    }
+    @media (width < 750px) {
+      section {
+        > * {
+          padding-inline: var(--section-spacing-s);
+        }
+
+        h2 {
+          margin-top: var(--flow-space, 1rlh);
+        }
+        h3 {
+          margin-top: var(--flow-space, 0.5rlh);
+        }
+
+        ul {
+          padding-inline: var(--section-spacing-m);
+        }
+
+        img {
+          padding-inline: calc(var(--card-padding-new) * 3);
+        }
       }
     }
   }

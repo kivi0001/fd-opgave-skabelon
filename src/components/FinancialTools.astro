@@ -9,7 +9,7 @@ import ArrowLeft from "@icons/arrow-left.svg";
 ---
 
 <section class="financial-projections">
-  <header>
+  <div class="header">
     <div class="container-div">
       <div class="financial-text-div">
         <h3>{financialProjections.eyebrow}</h3>
@@ -34,7 +34,7 @@ import ArrowLeft from "@icons/arrow-left.svg";
         />
       </div>
     </div>
-  </header>
+  </div>
   <ScrollingContainer financialProjections={financialProjections} />
 </section>
 
@@ -50,7 +50,7 @@ import ArrowLeft from "@icons/arrow-left.svg";
         justify-content: space-between;
       }
 
-      header {
+      .header {
         grid-column: content;
 
         .financial-text-div {
