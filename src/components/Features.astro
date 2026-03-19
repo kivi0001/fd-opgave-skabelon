@@ -48,6 +48,15 @@ const { theme = "default" } = Astro.props;
 <style>
   @layer components {
     .value-container[data-surface="dark"] {
+      background:
+        radial-gradient(circle at 75% 50%, #0000, #000),
+        conic-gradient(
+            from 180deg at 1px 1px,
+            hsl(from var(--color-action) h s l / 18%) 75%,
+            #0000 0
+          ) -1px -1px /
+          60px 60px round round,
+        #000;
       background-color: var(--color-ui-primary);
       color: var(--color-on-ui-primary);
       display: grid;
