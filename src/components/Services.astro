@@ -13,8 +13,7 @@ import DynamicImage from "@helpers/DynamicImage.astro";
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-
+      gap: var(--card-gap-new);
       @container (width < 800px) {
       }
     }

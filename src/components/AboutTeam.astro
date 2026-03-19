@@ -9,7 +9,7 @@ const firstTwoEmployees = employees.slice(0, 2);
 <section class="team-section">
   <div class="container">
     <div class="text">
-      <p>Our team</p>
+      <p class="eyebrow">Our team</p>
       <h2>We champion the bold</h2>
       <p>
         Our success stems from the synergy between dedicated teams and our
@@ -60,6 +60,18 @@ const firstTwoEmployees = employees.slice(0, 2);
       p,
       h2 {
         margin-block-end: var(--space-s);
+      }
+
+      .eyebrow {
+        font-family: var(--lato-regular);
+        font-size: var(--p-size);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        grid-column: 1;
+      }
+
+      h2 {
+        font-family: var(--h2-font);
       }
     }
 

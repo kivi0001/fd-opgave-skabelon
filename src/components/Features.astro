@@ -81,28 +81,32 @@ const { theme = "default" } = Astro.props;
         h2,
         p {
           color: var(--color-on-ui-primary);
+          margin-block-end: var(--space-xs);
         }
 
         h3 {
           font-family: var(--lato-regular);
+          font-size: var(--p-size);
           letter-spacing: 1.5px;
           text-transform: uppercase;
           grid-column: 1;
         }
 
         h2 {
-          font-size: var(--step-3);
+          font-size: var(--h2-size);
           grid-column: 1;
         }
 
         p {
-          font-size: var(--step-0);
+          font-size: var(--p-size);
           grid-column: 1;
           hyphens: auto;
+          padding-inline-end: var(--space-xs);
         }
 
         .button {
           grid-column: 4;
+          margin-block: var(--space-xs);
         }
 
         .valuebutton1 {
@@ -190,29 +194,32 @@ const { theme = "default" } = Astro.props;
       h2,
       p {
         color: var(--color-text);
+        margin-block-end: var(--space-xs);
       }
 
       h3 {
-        font-size: var(--step--0);
+        font-family: var(--lato-regular);
+        font-size: var(--p-size);
+        letter-spacing: 1.5px;
         text-transform: uppercase;
         grid-column: 1;
       }
 
       h2 {
-        font-size: var(--step-3);
+        font-size: var(--h2-size);
         grid-column: 1;
       }
 
       p {
-        font-size: var(--step-0);
+        font-size: var(--p-size);
         grid-column: 1;
-        margin: auto 0;
-        max-width: 600px;
         hyphens: auto;
+        padding-inline-end: var(--space-xs);
       }
 
       .button {
         grid-column: 4;
+        margin-block: var(--space-xs);
       }
 
       .valuebutton1 {

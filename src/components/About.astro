@@ -12,7 +12,7 @@ import Checkmark from "@icons/checkmark.svg";
     </div>
 
     <div class="content">
-      <p>OUR VISION</p>
+      <p class="eyebrow">Our Vision</p>
       <h2>Turn your ideas into reality.</h2>
 
       <p>
@@ -65,6 +65,14 @@ import Checkmark from "@icons/checkmark.svg";
   @layer components {
     section {
       padding: var(--section-spacing-l);
+    }
+
+    .eyebrow {
+      font-family: var(--lato-regular);
+      font-size: var(--p-size);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      grid-column: 1;
     }
     .container {
       display: grid;
@@ -124,8 +132,8 @@ import Checkmark from "@icons/checkmark.svg";
     }
 
     h2 {
-      font-size: xx-large;
-      font-family: var(--font-heading);
+      font-size: var(--h2-size);
+      font-family: var(--h2-font);
       padding-bottom: var(--space-s);
     }
 
